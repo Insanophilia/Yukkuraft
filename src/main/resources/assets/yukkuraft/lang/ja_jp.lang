@@ -1,0 +1,40 @@
+########################################
+#
+# Yukkuraft 言語ファイル (ja_JP)
+#
+########################################
+## MOD_NAME
+itemGroup.Yukkuraft=Yukkuraft
+########################################
+## ITEM_NAME
+item.purple_diamond.name=紫ダイヤモンド
+item.lump_of_sugar.name=砂糖の塊
+item.anko.name=餡子
+item.shiratama.name=白玉団子
+item.yukkuri_marisa.name=ゆっくり魔理沙
+item.yukkuri_reimu.name=ゆっくり霊夢
+item.okazari_marisa.name=ゆっくり魔理沙のお飾り
+item.strange_meat.name=奇妙な肉
+item.ground_meat.name=挽き肉
+item.hamburg_steak.name=ハンバーグ
+item.yaki_manjuu.name=焼き饅頭
+########################################
+## BLOCK_NAME
+tile.yukari_block.name=ゆかりブロック
+tile.sugar_block.name=砂糖ブロック
+tile.strange_meat_block.name=奇妙な肉ブロック
+tile.cooked_meat_block.name=調理済み肉ブロック
+tile.houraku.name=炮烙
+tile.mugshot_background.name=マグショット背景ブロック
+tile.factory_glass.name=加工所のガラスブロック
+tile.mincer.name=挽き肉製造機
+########################################
+## TOOL_TIP
+tooltip.item.yukkuri_marisa=状態：生存
+tooltip.tile.yukari_block=ゆかりブロック by Yukkuraft
+########################################
+## ETC_TEXT
+death.attack.yukkuraft.damage_source.mincer=%sはネギトロめいた死に様を晒した。
+
+
+

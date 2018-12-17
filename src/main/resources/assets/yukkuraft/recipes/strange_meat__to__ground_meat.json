@@ -1,0 +1,15 @@
+{
+    "type" : "forge:ore_shaped",
+    "group" : "yukkuraft:strange_meat__to__ground_meat",
+    "pattern" : ["#"],
+    "key" : {
+        "#" : {
+            "item" : "yukkuraft:strange_meat",
+            "data" : 0
+        }
+    },
+    "result" : {
+        "item" : "yukkuraft:ground_meat",
+        "count" : 1
+    }
+}

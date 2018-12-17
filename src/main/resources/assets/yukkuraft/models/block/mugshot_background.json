@@ -1,0 +1,12 @@
+{
+    "parent" : "block/cube",
+    "textures" : {
+        "particle"  : "yukkuraft:blocks/mugshot_background",
+        "up"        : "yukkuraft:blocks/mugshot_background_1",
+        "north"     : "yukkuraft:blocks/mugshot_background",
+        "south"     : "yukkuraft:blocks/mugshot_background",
+        "east"      : "yukkuraft:blocks/mugshot_background",
+        "west"      : "yukkuraft:blocks/mugshot_background",
+        "down"      : "yukkuraft:blocks/mugshot_background_1"
+    }
+}

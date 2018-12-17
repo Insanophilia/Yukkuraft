@@ -1,0 +1,6 @@
+{
+    "parent" : "block/cube_all",
+    "textures" : {
+        "all" : "yukkuraft:blocks/strange_meat_block"
+    }
+}

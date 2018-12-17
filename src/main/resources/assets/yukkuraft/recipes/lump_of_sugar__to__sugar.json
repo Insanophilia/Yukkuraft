@@ -1,0 +1,15 @@
+{
+    "type" : "forge:ore_shaped",
+    "group" : "yukkuraft:lump_of_sugar__to__sugar",
+    "pattern" : ["#"],
+    "key" : {
+        "#" : {
+            "item" : "yukkuraft:lump_of_sugar",
+            "data" : 0
+        }
+    },
+    "result" : {
+        "item" : "minecraft:sugar",
+        "count" : 1
+    }
+}
