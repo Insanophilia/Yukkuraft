@@ -33,6 +33,9 @@ tile.mincer.name=挽き肉製造機
 tooltip.item.yukkuri_marisa=状態：生存
 tooltip.tile.yukari_block=ゆかりブロック by Yukkuraft
 ########################################
+## ENTITY_NAME
+entity.yukkuri_reimu.name=ゆっくり霊夢
+########################################
 ## ETC_TEXT
 death.attack.yukkuraft.damage_source.mincer=%sはネギトロめいた死に様を晒した。
 
