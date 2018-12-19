@@ -1,7 +1,10 @@
 package jp.co.yukkuraft;
 
-import jp.co.yukkuraft.entity.EntityYukkuri;
+import jp.co.yukkuraft.entity.EntityYukkuriMarisa;
+import jp.co.yukkuraft.entity.EntityYukkuriReimu;
+import jp.co.yukkuraft.entity.ModelYukkuriMarisa;
 import jp.co.yukkuraft.entity.ModelYukkuriReimu;
+import jp.co.yukkuraft.entity.RenderYukkuriMarisa;
 import jp.co.yukkuraft.entity.RenderYukkuriReimu;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -20,18 +23,32 @@ public class YuEntities
 {
     public static void registerEntities()
     {
+        int entityId = 1;
+
         EntityRegistry.registerModEntity(new ResourceLocation("yukkuri_reimu"),
-                EntityYukkuri.class, "yukkuri_reimu", 0, ModCore.instance, 50, 1, true, 16711680, 16777215);
+                EntityYukkuriReimu.class, "yukkuri_reimu", entityId++, ModCore.instance, 50, 1, true, 16777215, 16711680);
+
+        EntityRegistry.registerModEntity(new ResourceLocation("yukkuri_marisa"),
+                EntityYukkuriMarisa.class, "yukkuri_marisa", entityId++, ModCore.instance, 50, 1, true, 0, 16777215);
     }
 
     public static void registerEntityRenderers()
     {
-        RenderingRegistry.registerEntityRenderingHandler(EntityYukkuri.class, new IRenderFactory<EntityYukkuri>()
+        RenderingRegistry.registerEntityRenderingHandler(EntityYukkuriReimu.class, new IRenderFactory<EntityYukkuriReimu>()
         {
             @Override
-            public Render<? super EntityYukkuri> createRenderFor(RenderManager manager)
+            public Render<? super EntityYukkuriReimu> createRenderFor(RenderManager manager)
             {
                 return new RenderYukkuriReimu(manager, new ModelYukkuriReimu(), 0.3f);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityYukkuriMarisa.class, new IRenderFactory<EntityYukkuriMarisa>()
+        {
+            @Override
+            public Render<? super EntityYukkuriMarisa> createRenderFor(RenderManager manager)
+            {
+                return new RenderYukkuriMarisa(manager, new ModelYukkuriMarisa(), 0.3f);
             }
         });
     }

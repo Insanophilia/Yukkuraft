@@ -34,6 +34,7 @@ tooltip.item.yukkuri_marisa=状態：生存
 tooltip.tile.yukari_block=ゆかりブロック by Yukkuraft
 ########################################
 ## ENTITY_NAME
+entity.yukkuri_marisa.name=ゆっくり魔理沙
 entity.yukkuri_reimu.name=ゆっくり霊夢
 ########################################
 ## ETC_TEXT
