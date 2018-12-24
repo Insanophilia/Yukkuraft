@@ -2,10 +2,10 @@ package jp.co.yukkuraft;
 
 import jp.co.yukkuraft.entity.EntityYukkuriMarisa;
 import jp.co.yukkuraft.entity.EntityYukkuriReimu;
-import jp.co.yukkuraft.entity.ModelYukkuriMarisa;
-import jp.co.yukkuraft.entity.ModelYukkuriReimu;
 import jp.co.yukkuraft.entity.RenderYukkuriMarisa;
 import jp.co.yukkuraft.entity.RenderYukkuriReimu;
+import jp.co.yukkuraft.entity.model.ModelYukkuriMarisa;
+import jp.co.yukkuraft.entity.model.ModelYukkuriReimu;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -26,7 +26,7 @@ public class YuEntities
         int entityId = 1;
 
         EntityRegistry.registerModEntity(new ResourceLocation("yukkuri_reimu"),
-                EntityYukkuriReimu.class, "yukkuri_reimu", entityId++, ModCore.instance, 50, 1, true, 16777215, 16711680);
+                EntityYukkuriReimu.class, "yukkuri_reimu", entityId++, ModCore.instance, 50, 1, true, 16711680, 16777215);
 
         EntityRegistry.registerModEntity(new ResourceLocation("yukkuri_marisa"),
                 EntityYukkuriMarisa.class, "yukkuri_marisa", entityId++, ModCore.instance, 50, 1, true, 0, 16777215);

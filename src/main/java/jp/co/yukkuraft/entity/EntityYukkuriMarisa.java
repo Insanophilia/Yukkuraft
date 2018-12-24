@@ -1,5 +1,6 @@
 package jp.co.yukkuraft.entity;
 
+import net.minecraft.entity.EntityAgeable;
 import net.minecraft.world.World;
 
 /**
@@ -13,5 +14,11 @@ public class EntityYukkuriMarisa extends EntityYukkuri
     public EntityYukkuriMarisa(World worldIn)
     {
         super(worldIn);
+    }
+
+    @Override
+    public EntityYukkuriMarisa createChild(EntityAgeable ageable)
+    {
+        return new EntityYukkuriMarisa(this.world);
     }
 }

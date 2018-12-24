@@ -4,6 +4,7 @@ import jp.co.yukkuraft.YuBlocks;
 import jp.co.yukkuraft.YuEntities;
 import jp.co.yukkuraft.YuEventHandler;
 import jp.co.yukkuraft.YuItems;
+import jp.co.yukkuraft.constant.YuLootTableList;
 import net.minecraftforge.common.MinecraftForge;
 
 /**
@@ -30,6 +31,8 @@ public abstract class CommonProxy
         YuItems.registerSmeltings();
         //　Block 精錬レシピ登録
         YuBlocks.registerSmeltings();
+        // LootTableList 登録
+        YuLootTableList.registerLootTableList();
         // EventHandler 登録
         MinecraftForge.EVENT_BUS.register(new YuEventHandler());
     }
