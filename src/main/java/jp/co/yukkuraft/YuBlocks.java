@@ -2,6 +2,7 @@ package jp.co.yukkuraft;
 
 import jp.co.yukkuraft.block.FactoryGlass;
 import jp.co.yukkuraft.block.Mincer;
+import jp.co.yukkuraft.block.Test0;
 import jp.co.yukkuraft.block.YuBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -29,8 +30,11 @@ public class YuBlocks
     public static final Block COOKED_MEAT_BLOCK  = new YuBlock(Material.CLAY, "cooked_meat_block", false, 0.5F, 2.5F, SoundType.PLANT, 0.0F);
     public static final Block MUGSHOT_BACKGROUND = new YuBlock(Material.IRON, "mugshot_background", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
     public static final Block MINCER             = new Mincer(Material.IRON, "mincer", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
+
     // Clear Block
     public static final Block FACTORY_GLASS = new FactoryGlass(Material.GLASS, "factory_glass", false, 5.0F, 10.0F, SoundType.GLASS, 0.0F);
+    // Test
+    public static final Block TEST0 = new Test0(Material.IRON, "test0", true, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
 
     public static void registerBlocks()
     {
@@ -43,6 +47,8 @@ public class YuBlocks
         YuBlocks.registerBlock(MINCER);
         // Clear Block
         YuBlocks.registerBlock(FACTORY_GLASS);
+        // Test
+        YuBlocks.registerBlock(TEST0);
     }
 
     private static void registerBlock(Block block)
@@ -62,6 +68,8 @@ public class YuBlocks
         YuBlocks.registerModel(MINCER);
         // Clear Block
         YuBlocks.registerModel(FACTORY_GLASS);
+        // Test
+        YuBlocks.registerModel(TEST0);
     }
 
     private static void registerModel(Block block)

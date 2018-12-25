@@ -17,7 +17,7 @@ public class EntityYukkuriMarisa extends EntityYukkuri
     }
 
     @Override
-    public EntityYukkuriMarisa createChild(EntityAgeable ageable)
+    public EntityAgeable createChild(EntityAgeable ageable)
     {
         return new EntityYukkuriMarisa(this.world);
     }

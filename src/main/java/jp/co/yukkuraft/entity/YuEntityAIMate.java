@@ -19,10 +19,10 @@ public class YuEntityAIMate extends EntityAIBase
     private final Class<? extends EntityAnimal> mateClass;
     World                                       world;
     private EntityAnimal                        targetMate;
-    /** Delay preventing a baby from spawning immediately when two mate-able animals find each other. */
-    int                                         spawnBabyDelay;
-    /** The speed the creature moves at during mating behavior. */
-    double                                      moveSpeed;
+    // 子ゆっくりの再生産までのクール時間
+    int spawnBabyDelay;
+    // 交尾中の速度？
+    double moveSpeed;
 
     public YuEntityAIMate(EntityAnimal animal, double speedIn)
     {
@@ -38,9 +38,7 @@ public class YuEntityAIMate extends EntityAIBase
         this.setMutexBits(3);
     }
 
-    /**
-     * Returns whether the EntityAIBase should begin execution.
-     */
+    // AI Task の実行判定
     public boolean shouldExecute()
     {
         if (!this.animal.isInLove())
@@ -53,26 +51,20 @@ public class YuEntityAIMate extends EntityAIBase
         }
     }
 
-    /**
-     * Returns whether an in-progress EntityAIBase should continue executing
-     */
+    // AI Task の実行継続判定
     public boolean shouldContinueExecuting()
     {
         return this.targetMate.isEntityAlive() && this.targetMate.isInLove() && this.spawnBabyDelay < 60;
     }
 
-    /**
-     * Reset the task's internal state. Called when this task is interrupted by another one
-     */
+    // AI Task の初期化処理
     public void resetTask()
     {
         this.targetMate = null;
         this.spawnBabyDelay = 0;
     }
 
-    /**
-     * Keep ticking a continuous task that has already been started
-     */
+    // AI Task の更新処理
     public void updateTask()
     {
         this.animal.getLookHelper().setLookPositionWithEntity(this.targetMate, 10.0F, (float) this.animal.getVerticalFaceSpeed());
@@ -85,13 +77,9 @@ public class YuEntityAIMate extends EntityAIBase
         }
     }
 
-    /**
-     * Loops through nearby animals and finds another animal of the same type that can be mated with. Returns the first
-     * valid mate found.
-     */
+    // 近場の番を取得する。
     private EntityAnimal getNearbyMate()
     {
-        //        List<EntityAnimal> list = this.world.<EntityAnimal> getEntitiesWithinAABB(this.mateClass, this.animal.getEntityBoundingBox().grow(8.0D));
         List<EntityAnimal> list = this.world.<EntityAnimal> getEntitiesWithinAABB(EntityYukkuri.class, this.animal.getEntityBoundingBox().grow(8.0D));
         System.out.println("entityList:" + list.size());
         double d0 = Double.MAX_VALUE;
@@ -109,9 +97,7 @@ public class YuEntityAIMate extends EntityAIBase
         return entityanimal;
     }
 
-    /**
-     * Spawns a baby animal of the same type.
-     */
+    // 子ゆっくりは両親の種類を1匹ずつ発生させる。
     private void spawnBaby()
     {
         EntityAgeable entityageable = this.animal.createChild(this.targetMate);
@@ -130,7 +116,7 @@ public class YuEntityAIMate extends EntityAIBase
 
         if (cancelled || cancelled2)
         {
-            //Reset the "inLove" state for the animals
+            // イベントがキャンセルされた場合
             this.animal.setGrowingAge(6000);
             this.targetMate.setGrowingAge(6000);
             this.animal.resetInLove();

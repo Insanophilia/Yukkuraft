@@ -28,6 +28,7 @@ tile.houraku.name=炮烙
 tile.mugshot_background.name=マグショット背景ブロック
 tile.factory_glass.name=加工所のガラスブロック
 tile.mincer.name=挽き肉製造機
+tile.test0.name=テストブロック0
 ########################################
 ## TOOL_TIP
 tooltip.item.yukkuri_marisa=状態：生存
