@@ -1,0 +1,23 @@
+{
+    "parent" : "block/block",
+    "textures" : {
+        "particle"  : "yukkuraft:blocks/belt_conveyor_side",
+        "top"       : "yukkuraft:blocks/belt_conveyor_up",
+        "bottom"    : "yukkuraft:blocks/belt_conveyor_up",
+        "side"      : "yukkuraft:blocks/belt_conveyor_side"
+    },
+    "elements" : [
+        {
+            "from"  : [ 0, 0, 0 ],
+            "to"    : [ 16, 1, 16 ],
+            "faces" : {
+                "down"  : { "texture" : "#top" },
+                "up"    : { "texture" : "#top" },
+                "north" : { "texture" : "#side" },
+                "south" : { "texture" : "#side" },
+                "west"  : { "texture" : "#side" },
+                "east"  : { "texture" : "#side" }
+            }
+        }
+    ]
+}
