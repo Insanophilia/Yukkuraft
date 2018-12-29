@@ -22,6 +22,7 @@ public class YuItems
     public static final Item LUMP_OF_SUGAR  = new YuItem("lump_of_sugar", false);
     public static final Item YUKKURI_MARISA = new YuItem("yukkuri_marisa", true);
     public static final Item OKAZARI_MARISA = new YuItem("okazari_marisa", false);
+    public static final Item OKAZARI_REIMU  = new YuItem("okazari_reimu", false);
     // Food Item
     public static final Item ANKO          = new YuFood(1, 0.1F, false, true, "anko", false);
     public static final Item SHIRATAMA     = new YuFood(1, 0.1F, false, true, "shiratama", false);
@@ -37,6 +38,7 @@ public class YuItems
         registerItem(LUMP_OF_SUGAR);
         registerItem(YUKKURI_MARISA);
         registerItem(OKAZARI_MARISA);
+        registerItem(OKAZARI_REIMU);
         // Food Item
         registerItem(ANKO);
         registerItem(SHIRATAMA);
@@ -58,6 +60,7 @@ public class YuItems
         registerModel(LUMP_OF_SUGAR);
         registerModel(YUKKURI_MARISA);
         registerModel(OKAZARI_MARISA);
+        registerModel(OKAZARI_REIMU);
         // Food Item
         registerModel(ANKO);
         registerModel(SHIRATAMA);

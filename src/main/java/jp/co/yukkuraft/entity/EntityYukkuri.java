@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 
 import javax.annotation.Nullable;
 
-import jp.co.yukkuraft.constant.YuLootTableList;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCarrot;
 import net.minecraft.block.state.IBlockState;
@@ -107,6 +106,14 @@ public class EntityYukkuri extends EntityAnimal
         this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 0.6D));
         // 一番近いプレーヤーを見る
         //        this.tasks.addTask(11, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
+    }
+
+    // ドロップの設定
+    @Override
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return null;
     }
 
     // 右クリック時の処理
@@ -432,12 +439,6 @@ public class EntityYukkuri extends EntityAnimal
     public boolean attackEntityFrom(DamageSource source, float amount)
     {
         return this.isEntityInvulnerable(source) ? false : super.attackEntityFrom(source, amount);
-    }
-
-    @Nullable
-    protected ResourceLocation getLootTable()
-    {
-        return YuLootTableList.YUKKURI_MARISA;
     }
 
     //    public EntityRabbit createChild(EntityAgeable ageable)

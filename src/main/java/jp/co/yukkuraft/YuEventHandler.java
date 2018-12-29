@@ -25,10 +25,10 @@ public class YuEventHandler
     public void hookFurnaceFuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event)
     {
         // Item
-        setBurnTime(event, YuItems.PURPLE_DIAMOND, 500);
-        setBurnTime(event, YuItems.OKAZARI_MARISA, 500);
+        setBurnTime(event, YuItems.OKAZARI_MARISA, 20);
+        setBurnTime(event, YuItems.OKAZARI_REIMU, 20);
         // Block
-        setBurnTime(event, Item.getItemFromBlock(YuBlocks.SUGAR_BLOCK), 1000);
+        //        setBurnTime(event, Item.getItemFromBlock(YuBlocks.SUGAR_BLOCK), 1000);
     }
 
     private void setBurnTime(FurnaceFuelBurnTimeEvent event, Item item, int burnTime)
