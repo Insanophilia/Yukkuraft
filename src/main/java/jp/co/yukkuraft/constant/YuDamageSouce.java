@@ -11,4 +11,5 @@ import net.minecraft.util.DamageSource;
 public class YuDamageSouce
 {
     public static final DamageSource MINCER = new DamageSource("yukkuraft.damage_source.mincer");
+    public static final DamageSource WET    = new DamageSource("yukkuraft.damage_source.wet");
 }

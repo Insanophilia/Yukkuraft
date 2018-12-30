@@ -7,6 +7,21 @@
                 {
                     "type"      : "item",
                     "name"      : "yukkuraft:anko",
+                    "weight"    : 1000,
+                    "functions" : [
+                        {
+                            "function"  : "set_count",
+                            "count"     : {"min" : 1, "max" : 2}
+                        },
+                        {
+                            "function"  : "looting_enchant",
+                            "count"     : {"min" : 1, "max" : 2}
+                        }
+                    ]
+                },
+                {
+                    "type"      : "item",
+                    "name"      : "yukkuraft:matter_anko",
                     "weight"    : 1,
                     "functions" : [
                         {
@@ -19,6 +34,7 @@
                         }
                     ]
                 }
+
             ]
         },
         {
@@ -50,6 +66,23 @@
                         {
                             "function"  : "set_count",
                             "count"     : {"min" : 0, "max" : 1}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name"      : "lump_of_sugar",
+            "rolls"     : 1,
+            "entries"   : [
+                {
+                    "type"      : "item",
+                    "name"      : "yukkuraft:lump_of_sugar",
+                    "weight"    : 1,
+                    "functions" : [
+                        {
+                            "function"  : "set_count",
+                            "count"     : {"min" : 1, "max" : 2}
                         }
                     ]
                 }

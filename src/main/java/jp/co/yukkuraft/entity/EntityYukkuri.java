@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 
 import javax.annotation.Nullable;
 
+import jp.co.yukkuraft.constant.YuDamageSouce;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCarrot;
 import net.minecraft.block.state.IBlockState;
@@ -59,8 +60,10 @@ public class EntityYukkuri extends EntityAnimal
     private int     jumpTicks;
     private int     jumpDuration;
     private boolean wasOnGround;
-    private int     currentMoveTypeDuration;
-    private int     carrotTicks;
+    // 現在の移動タイプの期間
+    private int currentMoveTypeDuration;
+    // 人参ティック
+    private int carrotTicks;
 
     public EntityYukkuri(World worldIn)
     {
@@ -112,6 +115,13 @@ public class EntityYukkuri extends EntityAnimal
     @Override
     @Nullable
     protected ResourceLocation getLootTable()
+    {
+        return null;
+    }
+
+    // 繁殖時に発生する子ゆっくりを設定
+    @Override
+    public EntityAgeable createChild(EntityAgeable ageable)
     {
         return null;
     }
@@ -181,9 +191,7 @@ public class EntityYukkuri extends EntityAnimal
         }
     }
 
-    /**
-     * Causes this entity to do an upwards motion (jumping).
-     */
+    // エンティティをジャンプさせます。
     protected void jump()
     {
         super.jump();
@@ -305,9 +313,8 @@ public class EntityYukkuri extends EntityAnimal
         this.wasOnGround = this.onGround;
     }
 
-    /**
-     * Attempts to create sprinting particles if the entity is sprinting and not in water.
-     */
+    // スプリント時のパーティクル表示
+    @Override
     public void spawnRunningParticles()
     {
     }
@@ -344,10 +351,10 @@ public class EntityYukkuri extends EntityAnimal
         this.disableJumpControl();
     }
 
-    /**
-     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
-     * use this to react to sunlight and start to burn.
-     */
+    public int wetDamageDuration = 100;
+    public int wetDamageTick     = 0;
+
+    // ティック毎の処理
     public void onLivingUpdate()
     {
         super.onLivingUpdate();
@@ -360,6 +367,32 @@ public class EntityYukkuri extends EntityAnimal
             this.jumpTicks = 0;
             this.jumpDuration = 0;
             this.setJumping(false);
+        }
+        // 水に濡れるとダメージを受ける。
+        if (this.isWet())
+        {
+            if (wetDamageTick++ >= wetDamageDuration)
+            {
+                this.attackEntityFrom(YuDamageSouce.WET, 1.0F);
+                wetDamageTick = 0;
+                spawnWetDamageParticles();
+            }
+        } else
+        {
+            wetDamageTick = 0;
+        }
+    }
+
+    // 水しぶきを発生させる。
+    public void spawnWetDamageParticles()
+    {
+        float f2 = (float) MathHelper.floor(this.getEntityBoundingBox().minY);
+        for (int j = 0; (float) j < 1.0F + this.width * 20.0F; ++j)
+        {
+            float f5 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.width;
+            float f6 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.width;
+            this.world.spawnParticle(EnumParticleTypes.WATER_SPLASH, this.posX + (double) f5, (double) (f2 + 1.0F), this.posZ + (double) f6, this.motionX, this.motionY,
+                    this.motionZ);
         }
     }
 
@@ -631,6 +664,7 @@ public class EntityYukkuri extends EntityAnimal
         }
     }
 
+    // AI 農場を襲撃
     static class AIRaidFarm extends EntityAIMoveToBlock
     {
         private final EntityYukkuri rabbit;
@@ -643,9 +677,8 @@ public class EntityYukkuri extends EntityAnimal
             this.rabbit = rabbitIn;
         }
 
-        /**
-         * Returns whether the EntityAIBase should begin execution.
-         */
+        // AI Task の実行判定
+        @Override
         public boolean shouldExecute()
         {
             if (this.runDelay <= 0)
@@ -663,17 +696,15 @@ public class EntityYukkuri extends EntityAnimal
             return super.shouldExecute();
         }
 
-        /**
-         * Returns whether an in-progress EntityAIBase should continue executing
-         */
+        // AI Task の実行継続判定
+        @Override
         public boolean shouldContinueExecuting()
         {
             return this.canRaid && super.shouldContinueExecuting();
         }
 
-        /**
-         * Keep ticking a continuous task that has already been started
-         */
+        // AI Task の更新処理
+        @Override
         public void updateTask()
         {
             super.updateTask();
@@ -824,11 +855,4 @@ public class EntityYukkuri extends EntityAnimal
     //            this.typeData = type;
     //        }
     //    }
-
-    @Override
-    public EntityAgeable createChild(EntityAgeable ageable)
-    {
-        // TODO 自動生成されたメソッド・スタブ
-        return null;
-    }
 }

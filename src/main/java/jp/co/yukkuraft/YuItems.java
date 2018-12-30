@@ -28,6 +28,7 @@ public class YuItems
     public static final Item OKAZARI_REIMU  = new YuItem("okazari_reimu", false);
     // Food Item
     public static final Item ANKO          = new YuFood(1, 0.1F, false, true, "anko", false);
+    public static final Item MATTER_ANKO   = new YuFood(10, 1.0F, false, true, "matter_anko", false);
     public static final Item SHIRATAMA     = new YuFood(1, 0.1F, false, true, "shiratama", false);
     public static final Item STRANGE_MEAT  = new YuFood(3, 0.3F, false, true, "strange_meat", false);
     public static final Item GROUND_MEAT   = new YuFood(3, 0.3F, false, true, "ground_meat", false);
@@ -49,6 +50,7 @@ public class YuItems
         registerItem(OKAZARI_REIMU);
         // Food Item
         registerItem(ANKO);
+        registerItem(MATTER_ANKO);
         registerItem(SHIRATAMA);
         registerItem(STRANGE_MEAT);
         registerItem(GROUND_MEAT);
@@ -76,6 +78,7 @@ public class YuItems
         registerModel(OKAZARI_REIMU);
         // Food Item
         registerModel(ANKO);
+        registerModel(MATTER_ANKO);
         registerModel(SHIRATAMA);
         registerModel(STRANGE_MEAT);
         registerModel(GROUND_MEAT);
