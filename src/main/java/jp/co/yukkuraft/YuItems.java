@@ -1,8 +1,11 @@
 package jp.co.yukkuraft;
 
+import jp.co.yukkuraft.constant.YuArmorMaterials;
+import jp.co.yukkuraft.item.YuArmor;
 import jp.co.yukkuraft.item.YuFood;
 import jp.co.yukkuraft.item.YuItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
@@ -30,6 +33,11 @@ public class YuItems
     public static final Item GROUND_MEAT   = new YuFood(3, 0.3F, false, true, "ground_meat", false);
     public static final Item HAMBURG_STEAK = new YuFood(8, 0.8F, false, true, "hamburg_steak", false);
     public static final Item YAKI_MANJUU   = new YuFood(6, 0.6F, false, true, "yaki_manjuu", false);
+    // Armor
+    public static final Item TEST_HELMET    = new YuArmor(YuArmorMaterials.TEST, 0, "test_helmet", EntityEquipmentSlot.HEAD);
+    public static final Item TEST_GAUNTLETS = new YuArmor(YuArmorMaterials.TEST, 0, "test_gauntlets", EntityEquipmentSlot.CHEST);
+    public static final Item TEST_LEGGINGS  = new YuArmor(YuArmorMaterials.TEST, 0, "test_leggings", EntityEquipmentSlot.LEGS);
+    public static final Item TEST_GREAVES   = new YuArmor(YuArmorMaterials.TEST, 0, "test_greaves", EntityEquipmentSlot.FEET);
 
     public static void registerItems()
     {
@@ -46,6 +54,11 @@ public class YuItems
         registerItem(GROUND_MEAT);
         registerItem(HAMBURG_STEAK);
         registerItem(YAKI_MANJUU);
+        // Armor
+        registerItem(TEST_HELMET);
+        registerItem(TEST_GAUNTLETS);
+        registerItem(TEST_LEGGINGS);
+        registerItem(TEST_GREAVES);
     }
 
     private static void registerItem(Item item)
@@ -68,6 +81,11 @@ public class YuItems
         registerModel(GROUND_MEAT);
         registerModel(HAMBURG_STEAK);
         registerModel(YAKI_MANJUU);
+        // Armor
+        registerModel(TEST_HELMET);
+        registerModel(TEST_GAUNTLETS);
+        registerModel(TEST_LEGGINGS);
+        registerModel(TEST_GREAVES);
     }
 
     private static void registerModel(Item item)

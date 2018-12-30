@@ -19,6 +19,11 @@ item.strange_meat.name=奇妙な肉
 item.ground_meat.name=挽き肉
 item.hamburg_steak.name=ハンバーグ
 item.yaki_manjuu.name=焼き饅頭
+
+item.test_helmet.name=試作型ヘルメット
+item.test_gauntlets.name=試作型ガントレット
+item.test_leggings.name=試作型レギンス
+item.test_greaves.name=試作型グリーブス
 ########################################
 ## BLOCK_NAME
 tile.yukari_block.name=ゆかりブロック
