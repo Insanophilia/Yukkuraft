@@ -14,6 +14,12 @@ public class YuAABB
     private static final double D00  = UNIT * 0.0D;
     private static final double D01  = UNIT * 1.0D;
     private static final double D02  = UNIT * 2.0D;
+    private static final double D04  = UNIT * 4.0D;
+    private static final double D05  = UNIT * 5.0D;
+    private static final double D06  = UNIT * 6.0D;
+    private static final double D08  = UNIT * 8.0D;
+    private static final double D11  = UNIT * 11.0D;
+    private static final double D12  = UNIT * 12.0D;
     private static final double D15  = UNIT * 15.0D;
     private static final double D16  = UNIT * 16.0D;
 
@@ -28,4 +34,6 @@ public class YuAABB
     public static final AxisAlignedBB WALL_WEST  = new AxisAlignedBB(D00, D00, D00, D01, D16, D16);
     // 厚さ 16 分の 1 ブロックの床の接地面の定義
     public static final AxisAlignedBB ON_FLOOR = new AxisAlignedBB(D00, D01, D00, D16, D02, D16);
+    // 子ゆっくりサイズの立方体の定義
+    public static final AxisAlignedBB CHILD_YUKKURI = new AxisAlignedBB(D05, D00, D05, D11, D06, D11);
 }

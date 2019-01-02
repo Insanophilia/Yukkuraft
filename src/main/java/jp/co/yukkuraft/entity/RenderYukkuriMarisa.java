@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * このクラスは「ゆっくり魔理沙」のレンダーを定義します。
+ * このクラスは「ゆっくり魔理沙」のレンダラーを定義します。
  *
  * @author Insanophilia
  *

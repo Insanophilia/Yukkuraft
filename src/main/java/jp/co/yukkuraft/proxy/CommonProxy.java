@@ -5,7 +5,9 @@ import jp.co.yukkuraft.YuEntities;
 import jp.co.yukkuraft.YuEventHandler;
 import jp.co.yukkuraft.YuItems;
 import jp.co.yukkuraft.constant.YuLootTableList;
+import jp.co.yukkuraft.tileentity.TileEntityYukkuriReimu;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * このクラスは Client と Server 共通処理の登録を行います。
@@ -23,6 +25,8 @@ public abstract class CommonProxy
         YuBlocks.registerBlocks();
         // Entity 登録
         YuEntities.registerEntities();
+        // TileEntity 登録
+        GameRegistry.registerTileEntity(TileEntityYukkuriReimu.class, "tile_entity_yukkuri_reimu");
     }
 
     public void init()

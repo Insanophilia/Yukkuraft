@@ -5,6 +5,7 @@ import jp.co.yukkuraft.block.FactoryGlass;
 import jp.co.yukkuraft.block.Mincer;
 import jp.co.yukkuraft.block.Test0;
 import jp.co.yukkuraft.block.YuBlock;
+import jp.co.yukkuraft.tileentity.BlockYukkuriReimu;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -32,11 +33,12 @@ public class YuBlocks
     public static final Block MUGSHOT_BACKGROUND = new YuBlock(Material.IRON, "mugshot_background", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
     public static final Block MINCER             = new Mincer(Material.IRON, "mincer", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
     public static final Block BELT_CONVEYOR      = new BeltConveyor(Material.IRON, "belt_conveyor", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
-
     // Clear Block
     public static final Block FACTORY_GLASS = new FactoryGlass(Material.GLASS, "factory_glass", false, 5.0F, 10.0F, SoundType.GLASS, 0.0F);
     // Test
-    public static final Block TEST0 = new Test0(Material.IRON, "test0", true, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
+    public static final Block TEST0 = new Test0(Material.IRON, "test0", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
+    // TileEntity Block
+    public static final Block YUKKURI_REIMU_BLOCK = new BlockYukkuriReimu(Material.CLAY, "yukkuri_reimu_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
 
     public static void registerBlocks()
     {
@@ -53,12 +55,21 @@ public class YuBlocks
         YuBlocks.registerBlock(FACTORY_GLASS);
         // Test
         YuBlocks.registerBlock(TEST0);
+        // TileEntity Block
+        YuBlocks.registerBlockWithOutItemBlock(YUKKURI_REIMU_BLOCK);
     }
 
+    // ブロックとブロックアイテムを登録する。
     private static void registerBlock(Block block)
     {
         ForgeRegistries.BLOCKS.register(block);
         ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+    }
+
+    // ブロックのみ登録する。
+    private static void registerBlockWithOutItemBlock(Block block)
+    {
+        ForgeRegistries.BLOCKS.register(block);
     }
 
     public static void registerModels()
@@ -76,6 +87,8 @@ public class YuBlocks
         YuBlocks.registerModel(FACTORY_GLASS);
         // Test
         YuBlocks.registerModel(TEST0);
+        // TileEntity Block
+        // YuBlocks.registerModel(YUKKURI_REIMU_BLOCK);
     }
 
     private static void registerModel(Block block)

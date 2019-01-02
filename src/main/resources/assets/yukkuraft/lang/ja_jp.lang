@@ -7,7 +7,7 @@
 itemGroup.Yukkuraft=Yukkuraft
 ########################################
 ## ITEM_NAME
-item.purple_diamond.name=紫ダイヤモンド
+item.purple_diamond.name=パープルダイヤモンド
 item.lump_of_sugar.name=砂糖の塊
 item.anko.name=餡子
 item.matter_anko.name=万能餡子
@@ -25,6 +25,8 @@ item.test_helmet.name=試作型ヘルメット
 item.test_gauntlets.name=試作型ガントレット
 item.test_leggings.name=試作型レギンス
 item.test_greaves.name=試作型グリーブス
+
+item.item_yukkuri_reimu_block.name=ゆっくり霊夢ブロック
 ########################################
 ## BLOCK_NAME
 tile.yukari_block.name=ゆかりブロック
@@ -40,6 +42,7 @@ tile.test0.name=テストブロック0
 ########################################
 ## TOOL_TIP
 tooltip.item.yukkuri_marisa=状態：生存
+tooltip.item.item_yukkuri_reimu_block=Size:big Face:smile
 tooltip.tile.yukari_block=ゆかりブロック by Yukkuraft
 ########################################
 ## ENTITY_NAME

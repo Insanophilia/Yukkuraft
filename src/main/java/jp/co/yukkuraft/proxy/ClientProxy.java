@@ -3,6 +3,9 @@ package jp.co.yukkuraft.proxy;
 import jp.co.yukkuraft.YuBlocks;
 import jp.co.yukkuraft.YuEntities;
 import jp.co.yukkuraft.YuItems;
+import jp.co.yukkuraft.tileentity.TESRYukkuriReimu;
+import jp.co.yukkuraft.tileentity.TileEntityYukkuriReimu;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 /**
  * このクラスは Client 専用処理の登録を行います。
@@ -28,6 +31,8 @@ public class ClientProxy extends CommonProxy
     public void init()
     {
         super.init();
+        // TileEntity Renderer 登録
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityYukkuriReimu.class, new TESRYukkuriReimu());
     }
 
     @Override

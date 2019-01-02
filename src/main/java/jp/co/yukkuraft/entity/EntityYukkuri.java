@@ -101,10 +101,8 @@ public class EntityYukkuri extends EntityAnimal
         this.tasks.addTask(1, new EntityYukkuri.AIPanic(this, 2.2D));
         // 繁殖
         this.tasks.addTask(2, new YuEntityAIMate(this, 0.8D));
-        // 注目
-        this.tasks.addTask(3, new EntityAITempt(this, 1.0D, Items.CARROT, false));
-        this.tasks.addTask(3, new EntityAITempt(this, 1.0D, Items.GOLDEN_CARROT, false));
-        this.tasks.addTask(3, new EntityAITempt(this, 1.0D, Item.getItemFromBlock(Blocks.YELLOW_FLOWER), false));
+        // 引き付ける
+        this.tasks.addTask(3, new EntityAITempt(this, 1.0D, Items.SUGAR, false));
         // 水を避ける
         this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 0.6D));
         // 一番近いプレーヤーを見る

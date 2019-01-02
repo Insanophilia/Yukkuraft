@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * このクラスは「ゆっくり霊夢」のレンダーを定義します。
+ * このクラスは「ゆっくり霊夢」のレンダラーを定義します。
  *
  * @author Insanophilia
  *

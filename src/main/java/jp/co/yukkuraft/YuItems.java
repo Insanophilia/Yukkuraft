@@ -1,6 +1,7 @@
 package jp.co.yukkuraft;
 
 import jp.co.yukkuraft.constant.YuArmorMaterials;
+import jp.co.yukkuraft.item.ItemYukkuriReimuBlock;
 import jp.co.yukkuraft.item.YuArmor;
 import jp.co.yukkuraft.item.YuFood;
 import jp.co.yukkuraft.item.YuItem;
@@ -39,6 +40,8 @@ public class YuItems
     public static final Item TEST_GAUNTLETS = new YuArmor(YuArmorMaterials.TEST, 0, "test_gauntlets", EntityEquipmentSlot.CHEST);
     public static final Item TEST_LEGGINGS  = new YuArmor(YuArmorMaterials.TEST, 0, "test_leggings", EntityEquipmentSlot.LEGS);
     public static final Item TEST_GREAVES   = new YuArmor(YuArmorMaterials.TEST, 0, "test_greaves", EntityEquipmentSlot.FEET);
+    // Custom Item
+    public static final Item ITEM_YUKKURI_REIMU_BLOCK = new ItemYukkuriReimuBlock("item_yukkuri_reimu_block", true);
 
     public static void registerItems()
     {
@@ -61,6 +64,8 @@ public class YuItems
         registerItem(TEST_GAUNTLETS);
         registerItem(TEST_LEGGINGS);
         registerItem(TEST_GREAVES);
+        // Custom Item
+        registerItem(ITEM_YUKKURI_REIMU_BLOCK);
     }
 
     private static void registerItem(Item item)
@@ -89,6 +94,8 @@ public class YuItems
         registerModel(TEST_GAUNTLETS);
         registerModel(TEST_LEGGINGS);
         registerModel(TEST_GREAVES);
+        // Custom Item
+        registerModel(ITEM_YUKKURI_REIMU_BLOCK);
     }
 
     private static void registerModel(Item item)
