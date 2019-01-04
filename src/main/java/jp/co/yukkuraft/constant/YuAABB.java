@@ -25,6 +25,8 @@ public class YuAABB
 
     // 1 ブロック分の立方体の定義
     public static final AxisAlignedBB FULL_BLOCK = new AxisAlignedBB(D00, D00, D00, D16, D16, D16);
+    // 16 分の 1 の隙間のある立方体
+    public static final AxisAlignedBB GAP_BLOCK = new AxisAlignedBB(D01, D01, D01, D15, D15, D15);
     // 厚さ 16 分の 1 ブロックの壁の定義
     public static final AxisAlignedBB WALL_UP    = new AxisAlignedBB(D00, D15, D00, D16, D16, D16);
     public static final AxisAlignedBB WALL_DOWN  = new AxisAlignedBB(D00, D00, D00, D16, D01, D16);

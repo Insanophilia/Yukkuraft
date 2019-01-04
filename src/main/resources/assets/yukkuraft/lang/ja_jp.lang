@@ -31,13 +31,18 @@ item.item_yukkuri_reimu_block.name=ゆっくり霊夢ブロック
 ## BLOCK_NAME
 tile.yukari_block.name=ゆかりブロック
 tile.sugar_block.name=砂糖ブロック
+tile.beef_block.name=牛肉ブロック
 tile.strange_meat_block.name=奇妙な肉ブロック
 tile.cooked_meat_block.name=調理済み肉ブロック
 tile.houraku.name=炮烙
 tile.mugshot_background.name=マグショット背景ブロック
 tile.factory_glass.name=加工所のガラスブロック
+
 tile.mincer.name=挽き肉製造機
 tile.belt_conveyor.name=ベルトコンベア
+tile.block_houraku_off.name=炮烙ブロック
+tile.block_houraku_on.name=炮烙ブロック
+
 tile.test0.name=テストブロック0
 ########################################
 ## TOOL_TIP
@@ -51,6 +56,6 @@ entity.yukkuri_reimu.name=ゆっくり霊夢
 ########################################
 ## ETC_TEXT
 death.attack.yukkuraft.damage_source.mincer=%sはネギトロめいた死に様を晒した。
-
+death.attack.yukkuraft.damage_source.houraku=%sは黒焦げになって死んだ。
 
 

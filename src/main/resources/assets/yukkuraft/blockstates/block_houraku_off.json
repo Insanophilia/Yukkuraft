@@ -1,0 +1,20 @@
+{
+    "variants" : {
+        "heat=0"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=1"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=2"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=3"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=4"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=5"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=6"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=7"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=8"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=9"    : { "model": "yukkuraft:block_houraku_off" },
+        "heat=10"   : { "model": "yukkuraft:block_houraku_off" },
+        "heat=11"   : { "model": "yukkuraft:block_houraku_off" },
+        "heat=12"   : { "model": "yukkuraft:block_houraku_off" },
+        "heat=13"   : { "model": "yukkuraft:block_houraku_off" },
+        "heat=14"   : { "model": "yukkuraft:block_houraku_off" },
+        "heat=15"   : { "model": "yukkuraft:block_houraku_off" }
+    }
+}
