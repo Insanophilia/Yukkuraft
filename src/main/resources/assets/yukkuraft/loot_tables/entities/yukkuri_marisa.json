@@ -1,6 +1,17 @@
 {
     "pools" : [
         {
+            "__comment" : "条件＿非燃焼時",
+            "conditions" : [
+                {
+                    "condition"     : "minecraft:entity_properties",
+                    "entity"        : "this",
+                    "properties"    : {
+                        "minecraft:on_fire" : false
+                    }
+                }
+            ],
+            "__comment" : "ドロップ＿餡子系",
             "name"      : "anko",
             "rolls"     : 1,
             "entries"   : [
@@ -37,6 +48,35 @@
             ]
         },
         {
+            "__comment" : "条件＿燃焼時",
+            "conditions" : [
+                {
+                    "condition"     : "minecraft:entity_properties",
+                    "entity"        : "this",
+                    "properties"    : {
+                        "minecraft:on_fire" : true
+                    }
+                }
+            ],
+            "__comment" : "ドロップ＿燃焼時",
+            "name"      : "yaki_manjuu",
+            "rolls"     : 1,
+            "entries"   : [
+                {
+                    "type"      : "item",
+                    "name"      : "yukkuraft:yaki_manjuu",
+                    "weight"    : 1,
+                    "functions" : [
+                        {
+                            "function"  : "set_count",
+                            "count"     : {"min" : 1, "max" : 1}
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "__comment" : "ドロップ＿お飾り系",
             "name"      : "okazari",
             "rolls"     : 1,
             "entries"   : [
@@ -54,6 +94,7 @@
             ]
         },
         {
+            "__comment" : "ドロップ＿白玉団子",
             "name"      : "shitarama",
             "rolls"     : 1,
             "entries"   : [
@@ -71,6 +112,7 @@
             ]
         },
         {
+            "__comment" : "ドロップ＿砂糖の塊",
             "name"      : "lump_of_sugar",
             "rolls"     : 1,
             "entries"   : [

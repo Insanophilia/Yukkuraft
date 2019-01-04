@@ -1,5 +1,8 @@
 package jp.co.yukkuraft;
 
+import java.awt.Color;
+
+import jp.co.yukkuraft.constant.YuColor;
 import jp.co.yukkuraft.entity.EntityYukkuriMarisa;
 import jp.co.yukkuraft.entity.EntityYukkuriReimu;
 import jp.co.yukkuraft.entity.RenderYukkuriMarisa;
@@ -8,7 +11,10 @@ import jp.co.yukkuraft.entity.model.ModelYukkuriMarisa;
 import jp.co.yukkuraft.entity.model.ModelYukkuriReimu;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -21,15 +27,29 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
  */
 public class YuEntities
 {
+    // ゆっくりが自然スポーンするバイオーム
+    public static final Biome[] YUKKURI_PLACE = {
+            Biomes.PLAINS,
+            Biomes.FOREST,
+            Biomes.BIRCH_FOREST,
+            Biomes.MUTATED_PLAINS,
+            Biomes.MUTATED_FOREST,
+            Biomes.MUTATED_BIRCH_FOREST
+    };
+
     public static void registerEntities()
     {
         int entityId = 1;
+        Color.BLACK.getRGB();
 
-        EntityRegistry.registerModEntity(new ResourceLocation("yukkuri_reimu"),
-                EntityYukkuriReimu.class, "yukkuri_reimu", entityId++, ModCore.instance, 50, 1, true, 16711680, 16777215);
-
+        // ゆっくりの登録
         EntityRegistry.registerModEntity(new ResourceLocation("yukkuri_marisa"),
-                EntityYukkuriMarisa.class, "yukkuri_marisa", entityId++, ModCore.instance, 50, 1, true, 0, 16777215);
+                EntityYukkuriMarisa.class, "yukkuri_marisa", entityId++, ModCore.instance, 50, 1, true, YuColor.MARISA_BLACK, YuColor.MARISA_WHITE);
+        EntityRegistry.registerModEntity(new ResourceLocation("yukkuri_reimu"),
+                EntityYukkuriReimu.class, "yukkuri_reimu", entityId++, ModCore.instance, 50, 1, true, YuColor.REIMU_RED, YuColor.REIMU_WHITE);
+        // ゆっくりの自然スポーン登録
+        EntityRegistry.addSpawn(EntityYukkuriMarisa.class, 20, 5, 10, EnumCreatureType.CREATURE, YUKKURI_PLACE);
+        EntityRegistry.addSpawn(EntityYukkuriReimu.class, 20, 5, 10, EnumCreatureType.CREATURE, YUKKURI_PLACE);
     }
 
     public static void registerEntityRenderers()
