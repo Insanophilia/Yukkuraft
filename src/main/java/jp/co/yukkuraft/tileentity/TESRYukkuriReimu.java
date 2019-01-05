@@ -57,10 +57,11 @@ public class TESRYukkuriReimu extends TileEntitySpecialRenderer<TileEntityBlockY
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 GlStateManager.translate(0.0F, -24.0F * f5, 0.0F);
             }
+            modelYukkuriReimu.head.render(f5);
+            modelYukkuriReimu.hair.render(f5);
             modelYukkuriReimu.face.render(f5);
             modelYukkuriReimu.option.render(f5);
-            modelYukkuriReimu.hair.render(f5);
-            modelYukkuriReimu.head.render(f5);
+
         } finally
         {
             GlStateManager.popMatrix();

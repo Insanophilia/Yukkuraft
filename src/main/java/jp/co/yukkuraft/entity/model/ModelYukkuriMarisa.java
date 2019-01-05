@@ -65,33 +65,25 @@ public class ModelYukkuriMarisa extends ModelBase
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     {
+        GlStateManager.pushMatrix();
         if (this.isChild)
         {
-            GlStateManager.pushMatrix();
             GlStateManager.scale(0.25F, 0.25F, 0.25F);
             GlStateManager.translate(0.0F, 24.0F * 3.0F * f5, 0.0F);
-            this.head.render(f5);
-            this.hair.render(f5);
-            this.face.render(f5);
-            this.hat1.render(f5);
-            this.hat2.render(f5);
-            this.hat3.render(f5);
-            this.hat4.render(f5);
-            GlStateManager.popMatrix();
         } else
         {
-            GlStateManager.pushMatrix();
             GlStateManager.scale(0.5F, 0.5F, 0.5F);
             GlStateManager.translate(0.0F, 24.0F * f5, 0.0F);
-            this.head.render(f5);
-            this.hair.render(f5);
-            this.face.render(f5);
-            this.hat1.render(f5);
-            this.hat2.render(f5);
-            this.hat3.render(f5);
-            this.hat4.render(f5);
-            GlStateManager.popMatrix();
         }
+        this.head.render(f5);
+        this.hair.render(f5);
+        this.face.render(f5);
+        this.hat1.render(f5);
+        this.hat2.render(f5);
+        this.hat3.render(f5);
+        this.hat4.render(f5);
+
+        GlStateManager.popMatrix();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z)
