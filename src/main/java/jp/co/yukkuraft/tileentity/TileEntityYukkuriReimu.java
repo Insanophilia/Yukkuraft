@@ -20,7 +20,19 @@ public class TileEntityYukkuriReimu extends TileEntity
 {
     // 回転値
     private int rotation;
+    // 表情
+    private int face;
+    // 子供
+    private boolean isChild;
 
+    public TileEntityYukkuriReimu()
+    {
+        this.rotation = 0;
+        this.face = 0;
+        this.isChild = false;
+    }
+
+    // ここから setter / getter
     public void setRotation(int rotation)
     {
         this.rotation = rotation;
@@ -31,6 +43,29 @@ public class TileEntityYukkuriReimu extends TileEntity
     {
         return this.rotation;
     }
+
+    public void setFace(int face)
+    {
+        this.face = face;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int getFace()
+    {
+        return this.face;
+    }
+
+    public void setChild(boolean isChild)
+    {
+        this.isChild = isChild;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public boolean isChild()
+    {
+        return this.isChild;
+    }
+    // ここまで setter / getter
 
     // ここからサーバとの通信処理
     @Override
@@ -69,7 +104,9 @@ public class TileEntityYukkuriReimu extends TileEntity
     public NBTTagCompound writeToNBT(NBTTagCompound parentNBTTagCompound)
     {
         super.writeToNBT(parentNBTTagCompound);
-        parentNBTTagCompound.setByte("Rot", (byte) (this.rotation & 255));
+        parentNBTTagCompound.setByte("rotation", (byte) (this.rotation & 255));
+        parentNBTTagCompound.setByte("face", (byte) (this.face & 255));
+        parentNBTTagCompound.setByte("isChild", (byte) (this.isChild ? 1 : 0));
         return parentNBTTagCompound;
     }
 
@@ -78,7 +115,9 @@ public class TileEntityYukkuriReimu extends TileEntity
     public void readFromNBT(NBTTagCompound parentNBTTagCompound)
     {
         super.readFromNBT(parentNBTTagCompound);
-        this.rotation = parentNBTTagCompound.getByte("Rot");
+        this.rotation = parentNBTTagCompound.getByte("rotation");
+        this.face = parentNBTTagCompound.getByte("face");
+        this.isChild = parentNBTTagCompound.getByte("isChild") == 1 ? true : false;
     }
 
     // TESR の最大描画距離の二乗を取得。

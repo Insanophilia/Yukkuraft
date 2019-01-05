@@ -22,11 +22,13 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class YuItems
 {
     // Simple Item
-    public static final Item PURPLE_DIAMOND = new YuItem("purple_diamond", false);
-    public static final Item LUMP_OF_SUGAR  = new YuItem("lump_of_sugar", false);
-    public static final Item YUKKURI_MARISA = new YuItem("yukkuri_marisa", true);
-    public static final Item OKAZARI_MARISA = new YuItem("okazari_marisa", false);
-    public static final Item OKAZARI_REIMU  = new YuItem("okazari_reimu", false);
+    public static final Item PURPLE_DIAMOND    = new YuItem("purple_diamond", false);
+    public static final Item LUMP_OF_SUGAR     = new YuItem("lump_of_sugar", false);
+    public static final Item YUKKURI_MARISA    = new YuItem("yukkuri_marisa", true);
+    public static final Item OKAZARI_MARISA    = new YuItem("okazari_marisa", false);
+    public static final Item OKAZARI_REIMU     = new YuItem("okazari_reimu", false);
+    public static final Item RING_OF_MOONLIGHT = new YuItem("ring_of_moonlight", false);
+
     // Food Item
     public static final Item ANKO          = new YuFood(1, 0.1F, false, true, "anko", false);
     public static final Item MATTER_ANKO   = new YuFood(10, 1.0F, false, true, "matter_anko", false);
@@ -51,6 +53,8 @@ public class YuItems
         registerItem(YUKKURI_MARISA);
         registerItem(OKAZARI_MARISA);
         registerItem(OKAZARI_REIMU);
+        registerItem(RING_OF_MOONLIGHT);
+
         // Food Item
         registerItem(ANKO);
         registerItem(MATTER_ANKO);
@@ -81,6 +85,8 @@ public class YuItems
         registerModel(YUKKURI_MARISA);
         registerModel(OKAZARI_MARISA);
         registerModel(OKAZARI_REIMU);
+        registerModel(RING_OF_MOONLIGHT);
+
         // Food Item
         registerModel(ANKO);
         registerModel(MATTER_ANKO);
