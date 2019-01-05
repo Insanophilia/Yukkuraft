@@ -6,6 +6,7 @@ import jp.co.yukkuraft.block.FactoryGlass;
 import jp.co.yukkuraft.block.Mincer;
 import jp.co.yukkuraft.block.Test0;
 import jp.co.yukkuraft.block.YuBlock;
+import jp.co.yukkuraft.tileentity.BlockYukkuriMarisa;
 import jp.co.yukkuraft.tileentity.BlockYukkuriReimu;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -44,7 +45,8 @@ public class YuBlocks
     // Test
     public static final Block TEST0 = new Test0(Material.IRON, "test0", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
     // TileEntity Block
-    public static final Block YUKKURI_REIMU_BLOCK = new BlockYukkuriReimu(Material.CLAY, "yukkuri_reimu_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
+    public static final Block YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa(Material.CLAY, "yukkuri_marisa_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
+    public static final Block YUKKURI_REIMU_BLOCK  = new BlockYukkuriReimu(Material.CLAY, "yukkuri_reimu_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
 
     public static void registerBlocks()
     {
@@ -66,6 +68,7 @@ public class YuBlocks
         // Test
         YuBlocks.registerBlock(TEST0);
         // TileEntity Block
+        YuBlocks.registerBlockWithOutItemBlock(YUKKURI_MARISA_BLOCK);
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_REIMU_BLOCK);
     }
 

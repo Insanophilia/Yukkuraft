@@ -26,9 +26,10 @@ item.test_gauntlets.name=試作型ガントレット
 item.test_leggings.name=試作型レギンス
 item.test_greaves.name=試作型グリーブス
 
+item.item_yukkuri_marisa_block.name=ゆっくり魔理沙ブロック
 item.item_yukkuri_reimu_block.name=ゆっくり霊夢ブロック
 
-item.ring_of_moonlight.name="月明かりの腕輪"
+item.ring_of_moonlight.name=月明かりの腕輪
 ########################################
 ## BLOCK_NAME
 tile.yukari_block.name=ゆかりブロック

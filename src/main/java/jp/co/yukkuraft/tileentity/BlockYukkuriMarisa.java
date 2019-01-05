@@ -7,15 +7,15 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 /**
- * このクラスは「ゆっくり霊夢ブロック」の定義を行います。
+ * このクラスは「ゆっくり魔理沙ブロック」の定義を行います。
  * ゆっくりの描画は TESR を用います。
  *
  * @author Insanophilia
  *
  */
-public class BlockYukkuriReimu extends BlockYukkuriBase
+public class BlockYukkuriMarisa extends BlockYukkuriBase
 {
-    public BlockYukkuriReimu(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
+    public BlockYukkuriMarisa(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
     {
         super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
     }
@@ -24,7 +24,7 @@ public class BlockYukkuriReimu extends BlockYukkuriBase
     @Override
     public TileEntity createTileEntity(World world, IBlockState state)
     {
-        return new TileEntityBlockYukkuriReimu();
+        return new TileEntityBlockYukkuriMarisa();
     }
     // ここまで TileEntity の設定
 }

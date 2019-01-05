@@ -11,12 +11,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * このクラスは「ゆっくり霊夢ブロック」のタイルエンティティ定義を行います。
+ * このクラスは「ゆっくりブロック」のタイルエンティティ定義を行います。
  *
  * @author Insanophilia
  *
  */
-public class TileEntityYukkuriReimu extends TileEntity
+public abstract class TileEntityBlockYukkuriBase extends TileEntity
 {
     // 回転値
     private int rotation;
@@ -25,7 +25,7 @@ public class TileEntityYukkuriReimu extends TileEntity
     // 子供
     private boolean isChild;
 
-    public TileEntityYukkuriReimu()
+    public TileEntityBlockYukkuriBase()
     {
         this.rotation = 0;
         this.face = 0;

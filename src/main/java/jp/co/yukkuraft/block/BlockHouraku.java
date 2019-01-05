@@ -57,6 +57,7 @@ public class BlockHouraku extends YuBlock
         }
     }
 
+    // ここからメタデータの処理
     // メタデータ -> プロパティ
     @Override
     public IBlockState getStateFromMeta(int meta)
@@ -80,6 +81,7 @@ public class BlockHouraku extends YuBlock
                 HEAT
         });
     }
+    // ここまでメタデータの処理
 
     // 更新間隔
     @Override
