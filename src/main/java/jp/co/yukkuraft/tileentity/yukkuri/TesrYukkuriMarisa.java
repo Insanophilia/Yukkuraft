@@ -1,34 +1,34 @@
-package jp.co.yukkuraft.tileentity;
+package jp.co.yukkuraft.tileentity.yukkuri;
 
-import jp.co.yukkuraft.entity.model.ModelYukkuriReimu;
+import jp.co.yukkuraft.entity.model.ModelYukkuriMarisa;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 
 /**
- * このクラスは「ゆっくり霊夢ブロック」のレンダラーを定義します。
+ * このクラスは「ゆっくり魔理沙ブロック」のレンダラーを定義します。
  *
  * @author Insanophilia
  *
  */
-public class TESRYukkuriReimu extends TileEntitySpecialRenderer<TileEntityBlockYukkuriReimu>
+public class TesrYukkuriMarisa extends TileEntitySpecialRenderer<TileYukkuriMarisa>
 {
     // テクスチャ
     private static final ResourceLocation[] TEXTURES = {
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_smile.png"),
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_cry.png"),
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_angry.png"),
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_sleep.png")
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_smile.png"),
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_cry.png"),
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_angry.png"),
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_sleep.png")
     };
     // モデル
-    public ModelYukkuriReimu modelYukkuriReimu = new ModelYukkuriReimu();
+    public ModelYukkuriMarisa modelYukkuriMarisa = new ModelYukkuriMarisa();
 
     // 描画処理
     @Override
-    public void render(TileEntityBlockYukkuriReimu tileEntity, double relativeX, double relativeY, double relativeZ,
+    public void render(TileYukkuriMarisa tileEntity, double relativeX, double relativeY, double relativeZ,
             float partialTicks, int blockDamageProgress, float alpha)
     {
-        if (!(tileEntity instanceof TileEntityBlockYukkuriReimu))
+        if (!(tileEntity instanceof TileYukkuriMarisa))
         {
             return;
         }
@@ -57,10 +57,13 @@ public class TESRYukkuriReimu extends TileEntitySpecialRenderer<TileEntityBlockY
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 GlStateManager.translate(0.0F, -24.0F * f5, 0.0F);
             }
-            modelYukkuriReimu.head.render(f5);
-            modelYukkuriReimu.hair.render(f5);
-            modelYukkuriReimu.face.render(f5);
-            modelYukkuriReimu.option.render(f5);
+            modelYukkuriMarisa.head.render(f5);
+            modelYukkuriMarisa.hair.render(f5);
+            modelYukkuriMarisa.face.render(f5);
+            modelYukkuriMarisa.hat1.render(f5);
+            modelYukkuriMarisa.hat2.render(f5);
+            modelYukkuriMarisa.hat3.render(f5);
+            modelYukkuriMarisa.hat4.render(f5);
 
         } finally
         {
@@ -70,7 +73,7 @@ public class TESRYukkuriReimu extends TileEntitySpecialRenderer<TileEntityBlockY
 
     // バウンディングボックスによる描画の制限が無い場合 true
     @Override
-    public boolean isGlobalRenderer(TileEntityBlockYukkuriReimu tileEntityYukkuriReimu)
+    public boolean isGlobalRenderer(TileYukkuriMarisa tileEntity)
     {
         return false;
     }

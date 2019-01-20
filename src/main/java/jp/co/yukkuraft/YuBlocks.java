@@ -6,8 +6,11 @@ import jp.co.yukkuraft.block.FactoryGlass;
 import jp.co.yukkuraft.block.Mincer;
 import jp.co.yukkuraft.block.Test0;
 import jp.co.yukkuraft.block.YuBlock;
-import jp.co.yukkuraft.tileentity.BlockYukkuriMarisa;
-import jp.co.yukkuraft.tileentity.BlockYukkuriReimu;
+import jp.co.yukkuraft.test.BlockHollow;
+import jp.co.yukkuraft.test.BlockStone;
+import jp.co.yukkuraft.tileentity.engine.BlockYukkuriEngine;
+import jp.co.yukkuraft.tileentity.yukkuri.BlockYukkuriMarisa;
+import jp.co.yukkuraft.tileentity.yukkuri.BlockYukkuriReimu;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -44,9 +47,12 @@ public class YuBlocks
     public static final Block FACTORY_GLASS = new FactoryGlass(Material.GLASS, "factory_glass", false, 5.0F, 10.0F, SoundType.GLASS, 0.0F);
     // Test
     public static final Block TEST0 = new Test0(Material.IRON, "test0", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
+    public static final Block TEST1 = new BlockStone(Material.IRON, "test1", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
+    public static final Block TEST2 = new BlockHollow(Material.IRON, "test2", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
     // TileEntity Block
     public static final Block YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa(Material.CLAY, "yukkuri_marisa_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
     public static final Block YUKKURI_REIMU_BLOCK  = new BlockYukkuriReimu(Material.CLAY, "yukkuri_reimu_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
+    public static final Block YUKKURI_ENGINE       = new BlockYukkuriEngine(Material.IRON, "yukkuri_engine", false, 5.0F, 10.0F, SoundType.METAL, 1.0F);
 
     public static void registerBlocks()
     {
@@ -67,9 +73,13 @@ public class YuBlocks
         YuBlocks.registerBlock(FACTORY_GLASS);
         // Test
         YuBlocks.registerBlock(TEST0);
+        YuBlocks.registerBlock(TEST1);
+        YuBlocks.registerBlock(TEST2);
+
         // TileEntity Block
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_MARISA_BLOCK);
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_REIMU_BLOCK);
+        YuBlocks.registerBlock(YUKKURI_ENGINE);
     }
 
     // ブロックとブロックアイテムを登録する。
@@ -104,8 +114,11 @@ public class YuBlocks
         YuBlocks.registerModel(FACTORY_GLASS);
         // Test
         YuBlocks.registerModel(TEST0);
+        YuBlocks.registerModel(TEST1);
+        YuBlocks.registerModel(TEST2);
         // TileEntity Block
         // YuBlocks.registerModel(YUKKURI_REIMU_BLOCK);
+        YuBlocks.registerModel(YUKKURI_ENGINE);
     }
 
     private static void registerModel(Block block)

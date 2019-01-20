@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity;
+package jp.co.yukkuraft.tileentity.yukkuri;
 
 import jp.co.yukkuraft.YuItems;
 import jp.co.yukkuraft.block.YuBlock;
@@ -29,7 +29,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public abstract class BlockYukkuriBase extends YuBlock
 {
-    public BlockYukkuriBase(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
+    public BlockYukkuriBase(Material material, String name, boolean hasTooltip, float hardness, float resistance,
+            SoundType soundType, float lightLevel)
     {
         super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
     }
@@ -76,9 +77,9 @@ public abstract class BlockYukkuriBase extends YuBlock
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
         TileEntity tileentity = source.getTileEntity(pos);
-        if (tileentity instanceof TileEntityBlockYukkuriBase)
+        if (tileentity instanceof TileYukkuriBase)
         {
-            TileEntityBlockYukkuriBase tileEntityBlockYukkuriBase = (TileEntityBlockYukkuriBase) tileentity;
+            TileYukkuriBase tileEntityBlockYukkuriBase = (TileYukkuriBase) tileentity;
             boolean isChild = tileEntityBlockYukkuriBase.isChild();
             if (isChild)
             {
@@ -89,12 +90,13 @@ public abstract class BlockYukkuriBase extends YuBlock
     }
 
     // 右クリック時の処理
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+            EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         TileEntity tileentity = worldIn.getTileEntity(pos);
-        if (tileentity instanceof TileEntityBlockYukkuriBase)
+        if (tileentity instanceof TileYukkuriBase)
         {
-            TileEntityBlockYukkuriBase tileEntityBlockYukkuriBase = (TileEntityBlockYukkuriBase) tileentity;
+            TileYukkuriBase tileEntityBlockYukkuriBase = (TileYukkuriBase) tileentity;
             // 手持ちアイテムによる判定
             ItemStack itemstack = playerIn.getHeldItem(hand);
             if (itemstack.getItem() == YuItems.RING_OF_MOONLIGHT)

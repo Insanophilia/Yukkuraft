@@ -65,6 +65,14 @@ public class ModelYukkuriReimu extends ModelBase
         GlStateManager.popMatrix();
     }
 
+    public void render(float f5)
+    {
+        this.head.render(f5);
+        this.hair.render(f5);
+        this.face.render(f5);
+        this.option.render(f5);
+    }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z)
     {
         modelRenderer.rotateAngleX = x;

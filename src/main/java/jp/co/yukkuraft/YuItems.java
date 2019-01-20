@@ -1,6 +1,7 @@
 package jp.co.yukkuraft;
 
 import jp.co.yukkuraft.constant.YuArmorMaterials;
+import jp.co.yukkuraft.item.ItemYukkuriEngine;
 import jp.co.yukkuraft.item.ItemYukkuriMarisaBlock;
 import jp.co.yukkuraft.item.ItemYukkuriReimuBlock;
 import jp.co.yukkuraft.item.YuArmor;
@@ -46,6 +47,7 @@ public class YuItems
     // Custom Item
     public static final Item ITEM_YUKKURI_MARISA_BLOCK = new ItemYukkuriMarisaBlock("item_yukkuri_marisa_block", true);
     public static final Item ITEM_YUKKURI_REIMU_BLOCK  = new ItemYukkuriReimuBlock("item_yukkuri_reimu_block", true);
+    public static final Item ITEM_YUKKURI_ENGINE       = new ItemYukkuriEngine("item_yukkuri_engine", false);
 
     public static void registerItems()
     {
@@ -73,6 +75,8 @@ public class YuItems
         // Custom Item
         registerItem(ITEM_YUKKURI_MARISA_BLOCK);
         registerItem(ITEM_YUKKURI_REIMU_BLOCK);
+        registerItem(ITEM_YUKKURI_ENGINE);
+
     }
 
     private static void registerItem(Item item)
@@ -106,6 +110,8 @@ public class YuItems
         // Custom Item
         registerModel(ITEM_YUKKURI_MARISA_BLOCK);
         registerModel(ITEM_YUKKURI_REIMU_BLOCK);
+        registerModel(ITEM_YUKKURI_ENGINE);
+
     }
 
     private static void registerModel(Item item)

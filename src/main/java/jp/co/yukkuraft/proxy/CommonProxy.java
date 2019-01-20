@@ -5,8 +5,11 @@ import jp.co.yukkuraft.YuEntities;
 import jp.co.yukkuraft.YuEventHandler;
 import jp.co.yukkuraft.YuItems;
 import jp.co.yukkuraft.constant.YuLootTableList;
-import jp.co.yukkuraft.tileentity.TileEntityBlockYukkuriMarisa;
-import jp.co.yukkuraft.tileentity.TileEntityBlockYukkuriReimu;
+import jp.co.yukkuraft.test.TileHollowMultiBlock;
+import jp.co.yukkuraft.test.TileStoneMultiblock;
+import jp.co.yukkuraft.tileentity.engine.TileYukkuriEngine;
+import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriMarisa;
+import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriReimu;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -27,8 +30,11 @@ public abstract class CommonProxy
         // Entity 登録
         YuEntities.registerEntities();
         // TileEntity 登録
-        GameRegistry.registerTileEntity(TileEntityBlockYukkuriMarisa.class, "tile_entity_yukkuri_marisa");
-        GameRegistry.registerTileEntity(TileEntityBlockYukkuriReimu.class, "tile_entity_yukkuri_reimu");
+        GameRegistry.registerTileEntity(TileYukkuriMarisa.class, "tile_yukkuri_marisa");
+        GameRegistry.registerTileEntity(TileYukkuriReimu.class, "tile_yukkuri_reimu");
+        GameRegistry.registerTileEntity(TileYukkuriEngine.class, "tile_yukkuri_engine");
+        GameRegistry.registerTileEntity(TileStoneMultiblock.class, "tile_stone_multi_block");
+        GameRegistry.registerTileEntity(TileHollowMultiBlock.class, "tile_hollow_multi_block");
     }
 
     public void init()

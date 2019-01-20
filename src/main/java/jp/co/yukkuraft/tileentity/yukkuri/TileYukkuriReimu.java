@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity;
+package jp.co.yukkuraft.tileentity.yukkuri;
 
 /**
  * このクラスは「ゆっくり霊夢ブロック」のタイルエンティティ定義を行います。
@@ -6,7 +6,7 @@ package jp.co.yukkuraft.tileentity;
  * @author Insanophilia
  *
  */
-public class TileEntityBlockYukkuriReimu extends TileEntityBlockYukkuriBase
+public class TileYukkuriReimu extends TileYukkuriBase
 {
     // TileEntity と TESR の紐づけの為にクラスを作成。
 }

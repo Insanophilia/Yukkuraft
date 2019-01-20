@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity;
+package jp.co.yukkuraft.tileentity.yukkuri;
 
 import javax.annotation.Nullable;
 
@@ -16,7 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @author Insanophilia
  *
  */
-public abstract class TileEntityBlockYukkuriBase extends TileEntity
+public abstract class TileYukkuriBase extends TileEntity
 {
     // 回転値
     private int rotation;
@@ -25,7 +25,7 @@ public abstract class TileEntityBlockYukkuriBase extends TileEntity
     // 子供
     private boolean isChild;
 
-    public TileEntityBlockYukkuriBase()
+    public TileYukkuriBase()
     {
         this.rotation = 0;
         this.face = 0;
@@ -101,23 +101,23 @@ public abstract class TileEntityBlockYukkuriBase extends TileEntity
 
     // NBT 書込処理
     @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound parentNBTTagCompound)
+    public NBTTagCompound writeToNBT(NBTTagCompound nbtTagCompound)
     {
-        super.writeToNBT(parentNBTTagCompound);
-        parentNBTTagCompound.setByte("rotation", (byte) (this.rotation & 255));
-        parentNBTTagCompound.setByte("face", (byte) (this.face & 255));
-        parentNBTTagCompound.setByte("isChild", (byte) (this.isChild ? 1 : 0));
-        return parentNBTTagCompound;
+        super.writeToNBT(nbtTagCompound);
+        nbtTagCompound.setByte("rotation", (byte) (this.rotation & 255));
+        nbtTagCompound.setByte("face", (byte) (this.face & 255));
+        nbtTagCompound.setByte("isChild", (byte) (this.isChild ? 1 : 0));
+        return nbtTagCompound;
     }
 
     // NBT 読込処理
     @Override
-    public void readFromNBT(NBTTagCompound parentNBTTagCompound)
+    public void readFromNBT(NBTTagCompound nbtTagCompound)
     {
-        super.readFromNBT(parentNBTTagCompound);
-        this.rotation = parentNBTTagCompound.getByte("rotation");
-        this.face = parentNBTTagCompound.getByte("face");
-        this.isChild = parentNBTTagCompound.getByte("isChild") == 1 ? true : false;
+        super.readFromNBT(nbtTagCompound);
+        this.rotation = nbtTagCompound.getByte("rotation");
+        this.face = nbtTagCompound.getByte("face");
+        this.isChild = nbtTagCompound.getByte("isChild") == 1 ? true : false;
     }
 
     // TESR の最大描画距離の二乗を取得。

@@ -1,7 +1,7 @@
 package jp.co.yukkuraft.item;
 
 import jp.co.yukkuraft.YuBlocks;
-import jp.co.yukkuraft.tileentity.TileEntityBlockYukkuriMarisa;
+import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriMarisa;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -29,7 +29,8 @@ public class ItemYukkuriMarisaBlock extends YuItem
     }
 
     // 右クリック時の処理
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
+            EnumFacing facing, float hitX, float hitY, float hitZ)
     {
         if (facing != EnumFacing.UP)
         {
@@ -56,12 +57,12 @@ public class ItemYukkuriMarisaBlock extends YuItem
                 worldIn.setBlockState(pos, YuBlocks.YUKKURI_MARISA_BLOCK.getDefaultState());
                 int i = MathHelper.floor((double) (player.rotationYaw * 16.0F / 360.0F) + 0.5D) & 15;
 
-                TileEntity tileentity = worldIn.getTileEntity(pos);
-                if (tileentity instanceof TileEntityBlockYukkuriMarisa)
+                TileEntity tile = worldIn.getTileEntity(pos);
+                if (tile instanceof TileYukkuriMarisa)
                 {
                     // タイルエンティティに回転値を設定する。
-                    TileEntityBlockYukkuriMarisa tileEntityBlockYukkuriMarisa = (TileEntityBlockYukkuriMarisa) tileentity;
-                    tileEntityBlockYukkuriMarisa.setRotation(i);
+                    TileYukkuriMarisa tileYukkuriMarisa = (TileYukkuriMarisa) tile;
+                    tileYukkuriMarisa.setRotation(i);
                 }
 
                 if (player instanceof EntityPlayerMP)
