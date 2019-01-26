@@ -20,10 +20,9 @@ public class BlockRoller extends YuMultiBlock
     /** 床 */
     public static final PropertyBool      FLOOR  = PropertyBool.create("floor");
 
-    public BlockRoller(Material material, String name, boolean hasTooltip, float hardness, float resistance,
-            SoundType soundType, float lightLevel)
+    public BlockRoller(String name, Material material, SoundType soundType, boolean hasTooltip)
     {
-        super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
+        super(name, material, soundType, hasTooltip);
     }
 
     // ここから TileEntity の設定

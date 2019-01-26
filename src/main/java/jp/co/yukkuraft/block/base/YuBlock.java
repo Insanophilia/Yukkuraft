@@ -133,4 +133,6 @@ public class YuBlock extends Block
     {
         return EnumBlockRenderType.MODEL;
     }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
 }

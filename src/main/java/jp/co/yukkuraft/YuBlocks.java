@@ -3,8 +3,8 @@ package jp.co.yukkuraft;
 import jp.co.yukkuraft.block.BlockBeltConveyor;
 import jp.co.yukkuraft.block.BlockHouraku;
 import jp.co.yukkuraft.block.BlockMincer;
-import jp.co.yukkuraft.block.FactoryGlass;
-import jp.co.yukkuraft.block.Test0;
+import jp.co.yukkuraft.block.BlockFactoryGlass;
+import jp.co.yukkuraft.block.BlockTest0;
 import jp.co.yukkuraft.block.base.YuBlock;
 import jp.co.yukkuraft.test.BlockHollow;
 import jp.co.yukkuraft.test.BlockStone;
@@ -31,6 +31,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class YuBlocks
 {
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックのインスタンス
+
     // Simple Block
     public static final Block YUKARI_BLOCK;;
     public static final Block SUGAR_BLOCK;
@@ -44,6 +47,15 @@ public class YuBlocks
     public static final Block HOURAKU_OFF;
     public static final Block HOURAKU_ON;
     public static final Block FACTORY_GLASS;
+    // Test Block
+    public static final Block TEST0;
+    public static final Block TEST1;
+    public static final Block TEST2;
+    // TileEntity Block
+    public static final Block YUKKURI_MARISA_BLOCK;
+    public static final Block YUKKURI_REIMU_BLOCK;
+    public static final Block YUKKURI_ENGINE;
+    public static final Block ROLLER;
 
     static
     {
@@ -65,26 +77,23 @@ public class YuBlocks
                 .setHardness(5.0F).setResistance(10.0F);
         HOURAKU_ON = new BlockHouraku("block_houraku_on", Material.IRON, SoundType.METAL, false, true)
                 .setHardness(5.0F).setResistance(10.0F).setLightLevel(1.0F);
-        FACTORY_GLASS = new FactoryGlass("factory_glass", Material.GLASS, SoundType.GLASS, false)
+        FACTORY_GLASS = new BlockFactoryGlass("factory_glass", Material.GLASS, SoundType.GLASS, false)
                 .setHardness(5.0F).setResistance(10.0F);
+        // TileEntity Block
+        YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa("yukkuri_marisa_block", Material.CLAY, SoundType.SLIME, false);
+        YUKKURI_REIMU_BLOCK = new BlockYukkuriReimu("yukkuri_reimu_block", Material.CLAY, SoundType.SLIME, false);
+        YUKKURI_ENGINE = new BlockYukkuriEngine("yukkuri_engine", Material.IRON, SoundType.METAL, false)
+                .setHardness(5.0F).setResistance(10.0F);
+        ROLLER = new BlockRoller("roller", Material.IRON, SoundType.METAL, false)
+                .setHardness(5.0F).setResistance(10.0F);
+        // Test Block
+        TEST0 = new BlockTest0("test0", Material.IRON, SoundType.METAL, false);
+        TEST1 = new BlockStone("test1", Material.IRON, SoundType.METAL, false);
+        TEST2 = new BlockHollow("test2", Material.IRON, SoundType.METAL, false);
     }
 
-    // Test Block
-    public static final Block TEST0 = new Test0(Material.IRON, "test0", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
-    public static final Block TEST1 = new BlockStone(Material.IRON, "test1", false, 5.0F, 6000000.0F, SoundType.METAL,
-            1.0F);
-    public static final Block TEST2 = new BlockHollow(Material.IRON, "test2", false, 5.0F, 6000000.0F, SoundType.METAL,
-            1.0F);
-    // TileEntity Block
-    public static final Block YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa(Material.CLAY, "yukkuri_marisa_block",
-            false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
-    public static final Block YUKKURI_REIMU_BLOCK  = new BlockYukkuriReimu(Material.CLAY, "yukkuri_reimu_block", false,
-            0.5F, 2.5F, SoundType.SLIME, 0.0F);
-    public static final Block YUKKURI_ENGINE       = new BlockYukkuriEngine(Material.IRON, "yukkuri_engine", false,
-            5.0F, 10.0F, SoundType.METAL, 1.0F);
-
-    public static final Block ROLLER = new BlockRoller(Material.IRON, "roller", false, 5.0F, 10.0F, SoundType.METAL,
-            1.0F);
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの登録
 
     public static void registerBlocks()
     {
@@ -100,19 +109,16 @@ public class YuBlocks
         YuBlocks.registerBlock(BELT_CONVEYOR);
         YuBlocks.registerBlock(HOURAKU_OFF);
         YuBlocks.registerBlockWithOutItemBlock(HOURAKU_ON);
-
-        // Clear Block
         YuBlocks.registerBlock(FACTORY_GLASS);
-        // Test
-        YuBlocks.registerBlock(TEST0);
-        YuBlocks.registerBlock(TEST1);
-        YuBlocks.registerBlock(TEST2);
-
         // TileEntity Block
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_MARISA_BLOCK);
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_REIMU_BLOCK);
         YuBlocks.registerBlock(YUKKURI_ENGINE);
         YuBlocks.registerBlock(ROLLER);
+        // Test Block
+        YuBlocks.registerBlock(TEST0);
+        YuBlocks.registerBlock(TEST1);
+        YuBlocks.registerBlock(TEST2);
     }
 
     // ブロックとブロックアイテムを登録する。
@@ -128,6 +134,9 @@ public class YuBlocks
         ForgeRegistries.BLOCKS.register(block);
     }
 
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックモデルの登録
+
     public static void registerModels()
     {
         // Simple Block
@@ -142,17 +151,16 @@ public class YuBlocks
         YuBlocks.registerModel(BELT_CONVEYOR);
         YuBlocks.registerModel(HOURAKU_OFF);
         YuBlocks.registerModel(HOURAKU_ON);
-
         // Clear Block
         YuBlocks.registerModel(FACTORY_GLASS);
-        // Test
-        YuBlocks.registerModel(TEST0);
-        YuBlocks.registerModel(TEST1);
-        YuBlocks.registerModel(TEST2);
         // TileEntity Block
         // YuBlocks.registerModel(YUKKURI_REIMU_BLOCK);
         YuBlocks.registerModel(YUKKURI_ENGINE);
         YuBlocks.registerModel(ROLLER);
+        // Test Block
+        YuBlocks.registerModel(TEST0);
+        YuBlocks.registerModel(TEST1);
+        YuBlocks.registerModel(TEST2);
     }
 
     private static void registerModel(Block block)
@@ -160,6 +168,9 @@ public class YuBlocks
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
                 new ModelResourceLocation(block.getRegistryName(), "inventory"));
     }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの精錬レシピの登録
 
     public static void registerSmeltings()
     {

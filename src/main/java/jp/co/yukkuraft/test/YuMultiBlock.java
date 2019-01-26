@@ -4,8 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import jp.co.yukkuraft.ModCore;
-import net.minecraft.block.BlockContainer;
+import jp.co.yukkuraft.block.base.YuBlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -24,34 +23,39 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @author Insanophilia
  *
  */
-public abstract class YuMultiBlock extends BlockContainer
+public abstract class YuMultiBlock extends YuBlockContainer
 {
     // 説明文の有無
     public boolean hasTooltip = false;
 
-    public YuMultiBlock(Material material, String name, boolean hasTooltip, float hardness, float resistance,
-            SoundType soundType, float lightLevel)
+    public YuMultiBlock(String name, Material material, SoundType soundType, boolean hasTooltip)
     {
-        super(material);
-        this.hasTooltip = hasTooltip;
-
-        // クリエイティブタブ
-        this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
-        // 非翻訳名称
-        this.setUnlocalizedName(name);
-        // 登録名称
-        this.setRegistryName(ModCore.MOD_ID, name);
-        // 硬度
-        this.setHardness(hardness);
-        // 爆発耐性
-        this.setResistance(resistance);
-        // 効果音タイプ
-        this.setSoundType(soundType);
-        // 明るさ 0.0F～1.0F
-        this.setLightLevel(lightLevel);
-        // DefaultState設定
-        this.setDefaultState(this.blockState.getBaseState());
+        super(name, material, soundType, hasTooltip);
     }
+
+    //    public YuMultiBlock(Material material, String name, boolean hasTooltip, float hardness, float resistance,
+    //            SoundType soundType, float lightLevel)
+    //    {
+    //        super(material);
+    //        this.hasTooltip = hasTooltip;
+    //
+    //        // クリエイティブタブ
+    //        this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
+    //        // 非翻訳名称
+    //        this.setUnlocalizedName(name);
+    //        // 登録名称
+    //        this.setRegistryName(ModCore.MOD_ID, name);
+    //        // 硬度
+    //        this.setHardness(hardness);
+    //        // 爆発耐性
+    //        this.setResistance(resistance);
+    //        // 効果音タイプ
+    //        this.setSoundType(soundType);
+    //        // 明るさ 0.0F～1.0F
+    //        this.setLightLevel(lightLevel);
+    //        // DefaultState設定
+    //        this.setDefaultState(this.blockState.getBaseState());
+    //    }
 
     // 説明文追加の処理
     @SideOnly(Side.CLIENT)

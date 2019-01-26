@@ -99,4 +99,6 @@ public class BlockBeltConveyor extends YuFacingBlock
     {
         return false;
     }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
 }

@@ -34,6 +34,25 @@ public class BlockMincer extends YuBlock
         super(name, material, soundType, hasTooltip);
     }
 
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの基本設定
+
+    // ブロックが不透明かどうかを返却する。
+    @Override
+    public boolean isOpaqueCube(IBlockState iBlockState)
+    {
+        return false;
+    }
+
+    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
+    @Override
+    public boolean isFullCube(IBlockState iBlockState)
+    {
+        return false;
+    }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+
     // 衝突判定の定義
     @Override
     public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox,
@@ -95,22 +114,5 @@ public class BlockMincer extends YuBlock
             double d2 = (double) pos.getZ() + r2;
             worldIn.spawnParticle(EnumParticleTypes.DRIP_LAVA, d0, d1, d2, 0.0D, 0.0D, 0.0D);
         }
-    }
-
-    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
-    // ここからブロックの基本設定
-
-    // ブロックが不透明かどうかを返却する。
-    @Override
-    public boolean isOpaqueCube(IBlockState iBlockState)
-    {
-        return false;
-    }
-
-    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
-    @Override
-    public boolean isFullCube(IBlockState iBlockState)
-    {
-        return false;
     }
 }

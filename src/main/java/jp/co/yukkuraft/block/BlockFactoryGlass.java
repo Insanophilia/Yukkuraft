@@ -19,12 +19,32 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @author Insanophilia
  *
  */
-public class FactoryGlass extends YuBlock
+public class BlockFactoryGlass extends YuBlock
 {
-    public FactoryGlass(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockFactoryGlass(String name, Material material, SoundType soundType, boolean hasTooltip)
     {
         super(name, material, soundType, hasTooltip);
     }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの基本設定
+
+    // ブロックが不透明かどうかを返却する。
+    @Override
+    public boolean isOpaqueCube(IBlockState iBlockState)
+    {
+        return false;
+    }
+
+    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
+    @Override
+    public boolean isFullCube(IBlockState iBlockState)
+    {
+        return false;
+    }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロック描画の設定
 
     // 半透明ブロックの設定
     @SideOnly(Side.CLIENT)
@@ -55,20 +75,6 @@ public class FactoryGlass extends YuBlock
         }
         return false;
     }
+
     // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
-    // ここからブロックの基本設定
-
-    // ブロックが不透明かどうかを返却する。
-    @Override
-    public boolean isOpaqueCube(IBlockState iBlockState)
-    {
-        return false;
-    }
-
-    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
-    @Override
-    public boolean isFullCube(IBlockState iBlockState)
-    {
-        return false;
-    }
 }

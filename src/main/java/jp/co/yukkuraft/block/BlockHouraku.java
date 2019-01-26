@@ -29,7 +29,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- *　このクラスは「炮烙ブロック」の定義を行います。
+ * このクラスは「炮烙ブロック」の定義を行います。
  *
  * @author Insanophilia
  *
@@ -58,7 +58,9 @@ public class BlockHouraku extends YuBlock
         }
     }
 
-    // ここからメタデータの処理
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからメタデータの設定
+
     // メタデータ -> プロパティ
     @Override
     public IBlockState getStateFromMeta(int meta)
@@ -82,7 +84,8 @@ public class BlockHouraku extends YuBlock
                 HEAT
         });
     }
-    // ここまでメタデータの処理
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
 
     // 更新間隔
     @Override

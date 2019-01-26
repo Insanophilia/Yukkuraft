@@ -27,6 +27,9 @@ public class YuFacingBlock extends YuBlock
         super(name, material, soundType, hasTooltip);
     }
 
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからメタデータの設定
+
     // メタデータ -> プロパティ
     @Override
     public IBlockState getStateFromMeta(int meta)
@@ -61,4 +64,6 @@ public class YuFacingBlock extends YuBlock
         EnumFacing enumfacing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
         return this.getDefaultState().withProperty(FACING, enumfacing);
     }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
 }
