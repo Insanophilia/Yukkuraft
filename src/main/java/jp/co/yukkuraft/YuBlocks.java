@@ -1,14 +1,15 @@
 package jp.co.yukkuraft;
 
-import jp.co.yukkuraft.block.BeltConveyor;
+import jp.co.yukkuraft.block.BlockBeltConveyor;
 import jp.co.yukkuraft.block.BlockHouraku;
+import jp.co.yukkuraft.block.BlockMincer;
 import jp.co.yukkuraft.block.FactoryGlass;
-import jp.co.yukkuraft.block.Mincer;
 import jp.co.yukkuraft.block.Test0;
-import jp.co.yukkuraft.block.YuBlock;
+import jp.co.yukkuraft.block.base.YuBlock;
 import jp.co.yukkuraft.test.BlockHollow;
 import jp.co.yukkuraft.test.BlockStone;
 import jp.co.yukkuraft.tileentity.engine.BlockYukkuriEngine;
+import jp.co.yukkuraft.tileentity.roller.BlockRoller;
 import jp.co.yukkuraft.tileentity.yukkuri.BlockYukkuriMarisa;
 import jp.co.yukkuraft.tileentity.yukkuri.BlockYukkuriReimu;
 import net.minecraft.block.Block;
@@ -23,7 +24,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
- * このクラスは Mod Block の登録を行います。
+ * このクラスは「MODで追加されるブロック」の登録を行います。
  *
  * @author Insanophilia
  *
@@ -31,28 +32,59 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class YuBlocks
 {
     // Simple Block
-    public static final Block YUKARI_BLOCK       = new YuBlock(Material.IRON, "yukari_block", true, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
-    public static final Block SUGAR_BLOCK        = new YuBlock(Material.SAND, "sugar_block", false, 0.5F, 2.5F, SoundType.SAND, 0.0F);
-    public static final Block BEEF_BLOCK         = new YuBlock(Material.CLAY, "beef_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
-    public static final Block STRANGE_MEAT_BLOCK = new YuBlock(Material.CLAY, "strange_meat_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
-    public static final Block COOKED_MEAT_BLOCK  = new YuBlock(Material.CLAY, "cooked_meat_block", false, 0.5F, 2.5F, SoundType.PLANT, 0.0F);
-    public static final Block MUGSHOT_BACKGROUND = new YuBlock(Material.IRON, "mugshot_background", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
+    public static final Block YUKARI_BLOCK;;
+    public static final Block SUGAR_BLOCK;
+    public static final Block BEEF_BLOCK;
+    public static final Block STRANGE_MEAT_BLOCK;
+    public static final Block COOKED_MEAT_BLOCK;
+    public static final Block MUGSHOT_BACKGROUND;
     // Custom Block
-    public static final Block MINCER        = new Mincer(Material.IRON, "mincer", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
-    public static final Block BELT_CONVEYOR = new BeltConveyor(Material.IRON, "belt_conveyor", false, 5.0F, 10.0F, SoundType.METAL, 0.0F);
-    public static final Block HOURAKU_OFF   = new BlockHouraku(Material.IRON, "block_houraku_off", false, 5.0F, 10.0F, SoundType.METAL, 0.0F, false);
-    public static final Block HOURAKU_ON    = new BlockHouraku(Material.IRON, "block_houraku_on", false, 5.0F, 10.0F, SoundType.METAL, 1.0F, true);
+    public static final Block MINCER;
+    public static final Block BELT_CONVEYOR;
+    public static final Block HOURAKU_OFF;
+    public static final Block HOURAKU_ON;
+    public static final Block FACTORY_GLASS;
 
-    // Clear Block
-    public static final Block FACTORY_GLASS = new FactoryGlass(Material.GLASS, "factory_glass", false, 5.0F, 10.0F, SoundType.GLASS, 0.0F);
-    // Test
+    static
+    {
+        // Simple Block
+        YUKARI_BLOCK = new YuBlock("yukari_block", Material.IRON, SoundType.METAL, true)
+                .setHardness(5.0F).setResistance(6000000.0F).setLightLevel(1.0F);
+        SUGAR_BLOCK = new YuBlock("sugar_block", Material.SAND, SoundType.SAND, false);
+        BEEF_BLOCK = new YuBlock("beef_block", Material.CLAY, SoundType.SLIME, false);
+        STRANGE_MEAT_BLOCK = new YuBlock("strange_meat_block", Material.CLAY, SoundType.SLIME, false);
+        COOKED_MEAT_BLOCK = new YuBlock("cooked_meat_block", Material.CLAY, SoundType.PLANT, false);
+        MUGSHOT_BACKGROUND = new YuBlock("mugshot_background", Material.IRON, SoundType.METAL, false)
+                .setHardness(5.0F).setResistance(10.0F);
+        // Custom Block
+        MINCER = new BlockMincer("mincer", Material.IRON, SoundType.METAL, false)
+                .setHardness(5.0F).setResistance(10.0F);
+        BELT_CONVEYOR = new BlockBeltConveyor("belt_conveyor", Material.IRON, SoundType.METAL, false)
+                .setHardness(5.0F).setResistance(10.0F);
+        HOURAKU_OFF = new BlockHouraku("block_houraku_off", Material.IRON, SoundType.METAL, false, false)
+                .setHardness(5.0F).setResistance(10.0F);
+        HOURAKU_ON = new BlockHouraku("block_houraku_on", Material.IRON, SoundType.METAL, false, true)
+                .setHardness(5.0F).setResistance(10.0F).setLightLevel(1.0F);
+        FACTORY_GLASS = new FactoryGlass("factory_glass", Material.GLASS, SoundType.GLASS, false)
+                .setHardness(5.0F).setResistance(10.0F);
+    }
+
+    // Test Block
     public static final Block TEST0 = new Test0(Material.IRON, "test0", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
-    public static final Block TEST1 = new BlockStone(Material.IRON, "test1", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
-    public static final Block TEST2 = new BlockHollow(Material.IRON, "test2", false, 5.0F, 6000000.0F, SoundType.METAL, 1.0F);
+    public static final Block TEST1 = new BlockStone(Material.IRON, "test1", false, 5.0F, 6000000.0F, SoundType.METAL,
+            1.0F);
+    public static final Block TEST2 = new BlockHollow(Material.IRON, "test2", false, 5.0F, 6000000.0F, SoundType.METAL,
+            1.0F);
     // TileEntity Block
-    public static final Block YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa(Material.CLAY, "yukkuri_marisa_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
-    public static final Block YUKKURI_REIMU_BLOCK  = new BlockYukkuriReimu(Material.CLAY, "yukkuri_reimu_block", false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
-    public static final Block YUKKURI_ENGINE       = new BlockYukkuriEngine(Material.IRON, "yukkuri_engine", false, 5.0F, 10.0F, SoundType.METAL, 1.0F);
+    public static final Block YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa(Material.CLAY, "yukkuri_marisa_block",
+            false, 0.5F, 2.5F, SoundType.SLIME, 0.0F);
+    public static final Block YUKKURI_REIMU_BLOCK  = new BlockYukkuriReimu(Material.CLAY, "yukkuri_reimu_block", false,
+            0.5F, 2.5F, SoundType.SLIME, 0.0F);
+    public static final Block YUKKURI_ENGINE       = new BlockYukkuriEngine(Material.IRON, "yukkuri_engine", false,
+            5.0F, 10.0F, SoundType.METAL, 1.0F);
+
+    public static final Block ROLLER = new BlockRoller(Material.IRON, "roller", false, 5.0F, 10.0F, SoundType.METAL,
+            1.0F);
 
     public static void registerBlocks()
     {
@@ -80,6 +112,7 @@ public class YuBlocks
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_MARISA_BLOCK);
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_REIMU_BLOCK);
         YuBlocks.registerBlock(YUKKURI_ENGINE);
+        YuBlocks.registerBlock(ROLLER);
     }
 
     // ブロックとブロックアイテムを登録する。
@@ -119,11 +152,13 @@ public class YuBlocks
         // TileEntity Block
         // YuBlocks.registerModel(YUKKURI_REIMU_BLOCK);
         YuBlocks.registerModel(YUKKURI_ENGINE);
+        YuBlocks.registerModel(ROLLER);
     }
 
     private static void registerModel(Block block)
     {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+                new ModelResourceLocation(block.getRegistryName(), "inventory"));
     }
 
     public static void registerSmeltings()

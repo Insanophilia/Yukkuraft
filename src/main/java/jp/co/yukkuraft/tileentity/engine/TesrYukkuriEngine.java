@@ -48,10 +48,8 @@ public class TesrYukkuriEngine extends TileEntitySpecialRenderer<TileYukkuriEngi
             // 回転値を反映する。
             GlStateManager.rotate((float) ((tileEntity.rotation * 360) / 4.0F) + 180.0F, 0, 1, 0);
             model.base.render(f5);
-            int x = 100;
-            tileEntity.engineRotation = (++tileEntity.engineRotation) % (360 * x);
-            model.shaft1.rotateAngleZ = tileEntity.engineRotation / x;
-            model.shaft2.rotateAngleZ = tileEntity.engineRotation / x;
+            model.shaft1.rotateAngleZ = tileEntity.engineRotation / 10F;
+            model.shaft2.rotateAngleZ = tileEntity.engineRotation / 10F;
             model.shaft1.render(f5);
             model.shaft2.render(f5);
         } finally

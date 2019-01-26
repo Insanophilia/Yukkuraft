@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import jp.co.yukkuraft.YuBlocks;
+import jp.co.yukkuraft.block.base.YuBlock;
 import jp.co.yukkuraft.constant.YuAABB;
 import jp.co.yukkuraft.constant.YuDamageSouce;
 import net.minecraft.block.Block;
@@ -35,14 +36,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class BlockHouraku extends YuBlock
 {
-    // 有効／無効
-    public final boolean isOn;
-    // 熱レベル
+    /** 有効／無効 */
+    public final boolean                isOn;
+    /** 熱レベル */
     public static final PropertyInteger HEAT = PropertyInteger.create("heat", 0, 15);
 
-    public BlockHouraku(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel, boolean isOn)
+    public BlockHouraku(String name, Material material, SoundType soundType, boolean hasTooltip, boolean isOn)
     {
-        super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
+        super(name, material, soundType, hasTooltip);
         this.isOn = isOn;
         this.setTickRandomly(true);
 
@@ -191,7 +192,8 @@ public class BlockHouraku extends YuBlock
 
     // 衝突判定の定義
     @Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn,
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox,
+            List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn,
             boolean isActualState)
     {
         addCollisionBoxToList(pos, entityBox, collidingBoxes, YuAABB.GAP_BLOCK);
@@ -237,7 +239,8 @@ public class BlockHouraku extends YuBlock
             double z = (double) pos.getZ() + rand.nextDouble();
             if (rand.nextDouble() < 0.1D)
             {
-                worldIn.playSound((double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F,
+                worldIn.playSound((double) pos.getX() + 0.5D, (double) pos.getY(), (double) pos.getZ() + 0.5D,
+                        SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F,
                         1.0F, false);
             }
             // 煙の描画

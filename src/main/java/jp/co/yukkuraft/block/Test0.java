@@ -1,6 +1,7 @@
 package jp.co.yukkuraft.block;
 
 import jp.co.yukkuraft.YuBlocks;
+import jp.co.yukkuraft.block.base.YuBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

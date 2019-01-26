@@ -5,6 +5,7 @@ import java.util.Random;
 
 import javax.annotation.Nullable;
 
+import jp.co.yukkuraft.block.base.YuBlock;
 import jp.co.yukkuraft.constant.YuAABB;
 import jp.co.yukkuraft.constant.YuDamageSouce;
 import net.minecraft.block.SoundType;
@@ -21,34 +22,22 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- *　このクラスは「挽き肉製造機ブロック」の定義を行います。
+ * このクラスは「挽き肉製造機ブロック」の定義を行います。
  *
  * @author Insanophilia
  *
  */
-public class Mincer extends YuBlock
+public class BlockMincer extends YuBlock
 {
-
-    public Mincer(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
+    public BlockMincer(String name, Material material, SoundType soundType, boolean hasTooltip)
     {
-        super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
-    }
-
-    @Override
-    public boolean isFullCube(IBlockState state)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
+        super(name, material, soundType, hasTooltip);
     }
 
     // 衝突判定の定義
     @Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn,
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox,
+            List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn,
             boolean p_185477_7_)
     {
         addCollisionBoxToList(pos, entityBox, collidingBoxes, YuAABB.WALL_NORTH);
@@ -106,5 +95,22 @@ public class Mincer extends YuBlock
             double d2 = (double) pos.getZ() + r2;
             worldIn.spawnParticle(EnumParticleTypes.DRIP_LAVA, d0, d1, d2, 0.0D, 0.0D, 0.0D);
         }
+    }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの基本設定
+
+    // ブロックが不透明かどうかを返却する。
+    @Override
+    public boolean isOpaqueCube(IBlockState iBlockState)
+    {
+        return false;
+    }
+
+    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
+    @Override
+    public boolean isFullCube(IBlockState iBlockState)
+    {
+        return false;
     }
 }

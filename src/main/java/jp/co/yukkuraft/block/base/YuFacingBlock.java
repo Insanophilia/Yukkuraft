@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.block;
+package jp.co.yukkuraft.block.base;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -12,19 +12,19 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 /**
- * このクラスは向きを持つ Mod Block 基底クラスの定義を行います。
+ * このクラスは「向きを持つブロックの基底クラス」です。
  *
  * @author Insanophilia
  *
  */
 public class YuFacingBlock extends YuBlock
 {
-    // 向き
+    /** 向き */
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-    public YuFacingBlock(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
+    public YuFacingBlock(String name, Material material, SoundType soundType, boolean hasTooltip)
     {
-        super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
+        super(name, material, soundType, hasTooltip);
     }
 
     // メタデータ -> プロパティ
@@ -55,7 +55,8 @@ public class YuFacingBlock extends YuBlock
 
     // ブロック設置時にプロパティを設定する。
     @Override
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing blockFaceClickedOn, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing blockFaceClickedOn, float hitX,
+            float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         EnumFacing enumfacing = (placer == null) ? EnumFacing.NORTH : EnumFacing.fromAngle(placer.rotationYaw);
         return this.getDefaultState().withProperty(FACING, enumfacing);

@@ -20,9 +20,10 @@ public class TileYukkuriEngine extends TileBigBlock
     //
     public ModelYukkuriReimu yukkuri = new ModelYukkuriReimu();
     //
-    public float  yukkuriPosX    = 0;
-    public double yukkuriPosY    = 0;
-    public float  engineRotation = 0;
+    public float  yukkuriPosX = 0;
+    public double yukkuriPosY = 0;
+    // エンジンの回転値
+    public float engineRotation = 0;
     //
     // 回転値
     public int rotation = 0;
@@ -46,8 +47,8 @@ public class TileYukkuriEngine extends TileBigBlock
     @Override
     public AxisAlignedBB getRenderBoundingBox()
     {
-        BlockPos pos1 = getPos().add(-1, -1, -1);
-        BlockPos pos2 = getPos().add(2, 2, 2);
+        BlockPos pos1 = getPos().add(-1, 0, -1);
+        BlockPos pos2 = getPos().add(2, 3, 2);
         AxisAlignedBB aabb = new AxisAlignedBB(pos1, pos2);
         return aabb;
     }
@@ -55,8 +56,8 @@ public class TileYukkuriEngine extends TileBigBlock
     @Override
     public void updateStructure()
     {
-        // TODO 自動生成されたメソッド・スタブ
-
+        // エンジンの回転値を設定
+        this.engineRotation = (++this.engineRotation) % (360F * 10F);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.block;
+package jp.co.yukkuraft.block.base;
 
 import java.util.List;
 
@@ -19,28 +19,53 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * このクラスは Mod Block 基底クラスの定義を行います。
+ * このクラスは「MODで追加されるブロックの基底クラス」です。
  *
  * @author Insanophilia
  *
  */
 public class YuBlock extends Block
 {
-    // 説明文の有無
+    /** 説明文の有無 */
     public boolean hasTooltip = false;
+
+    /** シンプルな設定でブロックを作成します。 */
+    public YuBlock(String name, Material material, SoundType soundType, boolean hasTooltip)
+    {
+        super(material);
+        this.hasTooltip = hasTooltip;
+
+        // クリエイティブタブ
+        this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
+        // 非翻訳名称
+        this.setUnlocalizedName(name);
+        // 登録名称
+        this.setRegistryName(ModCore.MOD_ID, name);
+        // 硬度
+        this.setHardness(0.5F);
+        // 爆発耐性
+        this.setResistance(2.5F);
+        // 効果音タイプ
+        this.setSoundType(soundType);
+        // 明るさ 0.0F～1.0F
+        this.setLightLevel(0F);
+        // DefaultState設定
+        this.setDefaultState(this.blockState.getBaseState());
+    }
 
     /**
      * このコンストラクタは指定の条件でシンプルなブロックを作成します。
      *
      * @param material 材質
-     * @param name　名称
+     * @param name 名称
      * @param hasTooltip 説明文の有無
      * @param hardness 硬度
      * @param resistance 爆発耐性
      * @param soundType 効果音タイプ
      * @param lightLevel 明るさ
      */
-    public YuBlock(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
+    public YuBlock(Material material, String name, boolean hasTooltip, float hardness, float resistance,
+            SoundType soundType, float lightLevel)
     {
         super(material);
         this.hasTooltip = hasTooltip;
@@ -76,6 +101,9 @@ public class YuBlock extends Block
         }
     }
 
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの基本設定
+
     // ブロックが不透明かどうかを返却する。
     @Override
     public boolean isOpaqueCube(IBlockState iBlockState)
@@ -83,33 +111,26 @@ public class YuBlock extends Block
         return true;
     }
 
-    // ブロックが 1 ブロック分の空間を完全に占有できるかどうかを返却する。
+    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
     @Override
     public boolean isFullCube(IBlockState iBlockState)
     {
         return true;
     }
 
-    // ブロック描画の設定
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロック描画の設定
+
     @SideOnly(Side.CLIENT)
-    @Override
     public BlockRenderLayer getBlockLayer()
     {
         return BlockRenderLayer.SOLID;
     }
 
-    // ブロック描画の設定
+    // BlockContainer で INVISIBLE になるのを直しておく
     @Override
     public EnumBlockRenderType getRenderType(IBlockState iBlockState)
     {
         return EnumBlockRenderType.MODEL;
-    }
-
-    // 効果音の設定
-    @Override
-    protected Block setSoundType(SoundType sound)
-    {
-        this.blockSoundType = sound;
-        return this;
     }
 }

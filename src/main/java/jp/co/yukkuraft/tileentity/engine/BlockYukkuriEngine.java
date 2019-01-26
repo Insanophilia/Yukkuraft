@@ -82,10 +82,6 @@ public class BlockYukkuriEngine extends YuMultiBlock
         if (tile != null & tile instanceof TileYukkuriEngine && ((TileYukkuriEngine) tile).isNBTLoaded)
         {
             TileYukkuriEngine tileEngine = (TileYukkuriEngine) tile;
-            //            if (tileEngine.isMaster)
-            //            {
-            //                return YuAABB.MULTI_BLOCK_3_3_3;
-            //            }
             return YuAABB.BIG_BLOCK_333.offset(tileEngine.masterPos.subtract(pos));
         }
         return super.getBoundingBox(state, source, pos);

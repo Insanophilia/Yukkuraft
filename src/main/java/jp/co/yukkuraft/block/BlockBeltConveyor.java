@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import jp.co.yukkuraft.block.base.YuFacingBlock;
 import jp.co.yukkuraft.constant.YuAABB;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -16,33 +17,22 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 /**
- *　このクラスは「ベルトコンベア」の定義を行います。
+ * このクラスは「ベルトコンベアブロック」の定義を行います。
  *
  * @author Insanophilia
  *
  */
-public class BeltConveyor extends YuFacingBlock
+public class BlockBeltConveyor extends YuFacingBlock
 {
-    public BeltConveyor(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
+    public BlockBeltConveyor(String name, Material material, SoundType soundType, boolean hasTooltip)
     {
-        super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
-    }
-
-    @Override
-    public boolean isFullCube(IBlockState state)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
+        super(name, material, soundType, hasTooltip);
     }
 
     // 衝突判定の定義
     @Override
-    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn,
+    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox,
+            List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn,
             boolean p_185477_7_)
     {
         addCollisionBoxToList(pos, entityBox, collidingBoxes, YuAABB.WALL_DOWN);
@@ -74,24 +64,39 @@ public class BeltConveyor extends YuFacingBlock
                 {
                     switch (facingbits)
                     {
-                    case 0:
-                        entity.motionZ += 0.1D;
-                        break;
-                    case 1:
-                        entity.motionX -= 0.1D;
-                        break;
-                    case 2:
-                        entity.motionZ -= 0.1D;
-                        break;
-                    case 3:
-                        entity.motionX += 0.1D;
-                        break;
-                    default:
-                        break;
+                        case 0:
+                            entity.motionZ += 0.1D;
+                            break;
+                        case 1:
+                            entity.motionX -= 0.1D;
+                            break;
+                        case 2:
+                            entity.motionZ -= 0.1D;
+                            break;
+                        case 3:
+                            entity.motionX += 0.1D;
+                            break;
+                        default:
+                            break;
                     }
                 }
             }
         }
     }
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの基本設定
 
+    // ブロックが不透明かどうかを返却する。
+    @Override
+    public boolean isOpaqueCube(IBlockState iBlockState)
+    {
+        return false;
+    }
+
+    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
+    @Override
+    public boolean isFullCube(IBlockState iBlockState)
+    {
+        return false;
+    }
 }

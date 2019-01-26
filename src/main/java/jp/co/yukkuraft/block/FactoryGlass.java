@@ -1,6 +1,7 @@
 package jp.co.yukkuraft.block;
 
 import jp.co.yukkuraft.YuBlocks;
+import jp.co.yukkuraft.block.base.YuBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -20,21 +21,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class FactoryGlass extends YuBlock
 {
-    public FactoryGlass(Material material, String name, boolean hasTooltip, float hardness, float resistance, SoundType soundType, float lightLevel)
+    public FactoryGlass(String name, Material material, SoundType soundType, boolean hasTooltip)
     {
-        super(material, name, hasTooltip, hardness, resistance, soundType, lightLevel);
-    }
-
-    @Override
-    public boolean isFullCube(IBlockState state)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
-        return false;
+        super(name, material, soundType, hasTooltip);
     }
 
     // 半透明ブロックの設定
@@ -64,6 +53,22 @@ public class FactoryGlass extends YuBlock
                 return false;
             }
         }
+        return false;
+    }
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからブロックの基本設定
+
+    // ブロックが不透明かどうかを返却する。
+    @Override
+    public boolean isOpaqueCube(IBlockState iBlockState)
+    {
+        return false;
+    }
+
+    // ブロックが1ブロック分の空間を完全に占有できるかどうかを返却する。
+    @Override
+    public boolean isFullCube(IBlockState iBlockState)
+    {
         return false;
     }
 }
