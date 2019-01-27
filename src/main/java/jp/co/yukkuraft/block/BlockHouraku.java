@@ -41,9 +41,9 @@ public class BlockHouraku extends YuBlock
     /** 熱レベル */
     public static final PropertyInteger HEAT = PropertyInteger.create("heat", 0, 15);
 
-    public BlockHouraku(String name, Material material, SoundType soundType, boolean hasTooltip, boolean isOn)
+    public BlockHouraku(String name, Material material, SoundType soundType, boolean isOn)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
         this.isOn = isOn;
         this.setTickRandomly(true);
 

@@ -24,9 +24,9 @@ import net.minecraft.world.World;
  */
 public class BlockBeltConveyor extends YuFacingBlock
 {
-    public BlockBeltConveyor(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockBeltConveyor(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // 衝突判定の定義

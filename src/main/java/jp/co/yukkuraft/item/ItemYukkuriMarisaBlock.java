@@ -1,6 +1,7 @@
 package jp.co.yukkuraft.item;
 
 import jp.co.yukkuraft.YuBlocks;
+import jp.co.yukkuraft.item.base.YuItem;
 import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriMarisa;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
@@ -23,9 +24,9 @@ import net.minecraft.world.World;
  */
 public class ItemYukkuriMarisaBlock extends YuItem
 {
-    public ItemYukkuriMarisaBlock(String name, boolean hasTooltip)
+    public ItemYukkuriMarisaBlock(String name)
     {
-        super(name, hasTooltip);
+        super(name);
     }
 
     // 右クリック時の処理

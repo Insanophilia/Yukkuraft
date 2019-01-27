@@ -22,9 +22,9 @@ import net.minecraft.world.World;
  */
 public class BlockTest0 extends YuBlock
 {
-    public BlockTest0(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockTest0(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // 右クリック時の処理

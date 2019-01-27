@@ -29,9 +29,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class BlockMincer extends YuBlock
 {
-    public BlockMincer(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockMincer(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*

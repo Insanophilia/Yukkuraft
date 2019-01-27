@@ -15,9 +15,9 @@ import net.minecraft.world.World;
  */
 public class BlockYukkuriMarisa extends BlockYukkuriBase
 {
-    public BlockYukkuriMarisa(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockYukkuriMarisa(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // ここから TileEntity の設定

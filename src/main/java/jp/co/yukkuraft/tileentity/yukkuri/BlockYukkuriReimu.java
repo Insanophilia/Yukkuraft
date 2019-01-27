@@ -15,9 +15,9 @@ import net.minecraft.world.World;
  */
 public class BlockYukkuriReimu extends BlockYukkuriBase
 {
-    public BlockYukkuriReimu(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockYukkuriReimu(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // ここから TileEntity の設定

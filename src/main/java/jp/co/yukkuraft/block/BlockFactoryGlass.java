@@ -21,9 +21,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class BlockFactoryGlass extends YuBlock
 {
-    public BlockFactoryGlass(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockFactoryGlass(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*

@@ -22,9 +22,9 @@ public class YuFacingBlock extends YuBlock
     /** 向き */
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-    public YuFacingBlock(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public YuFacingBlock(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*

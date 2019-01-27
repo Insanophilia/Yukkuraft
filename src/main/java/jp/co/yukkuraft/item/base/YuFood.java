@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.item;
+package jp.co.yukkuraft.item.base;
 
 import java.util.List;
 
@@ -8,32 +8,33 @@ import jp.co.yukkuraft.ModCore;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * このクラスは Mod Item 基底クラスの定義を行います。
+ * このクラスは「MODで追加される食料アイテムの基底クラス」です。
  *
  * @author Insanophilia
  *
  */
-public class YuItem extends Item
+public class YuFood extends ItemFood
 {
     // 説明文の有無
     public boolean hasTooltip = false;
 
     /**
-     * このコンストラクタは指定の条件でシンプルなアイテムを作成します。
-     *
+     * シンプルな設定でアイテムを作成します。
      * @param name 名称
-     * @param hasTooltip Tooltip の有無
+     * @param amount 満腹度の回復量
+     * @param saturation 腹持ち値
+     * @param isWolfFood 狼が食べるか
      */
-    public YuItem(String name, boolean hasTooltip)
+    public YuFood(String name, int amount, float saturation, boolean isWolfFood)
     {
-        super();
-        this.hasTooltip = hasTooltip;
+        super(amount, saturation, isWolfFood);
 
         // クリエイティブタブ
         this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
@@ -43,6 +44,13 @@ public class YuItem extends Item
         this.setRegistryName(ModCore.MOD_ID, name);
         // 最大スタック数
         this.setMaxStackSize(64);
+    }
+
+    // 説明文を表示する。
+    public Item setTooltipVisible()
+    {
+        this.hasTooltip = true;
+        return this;
     }
 
     // 説明文追加の処理
@@ -57,4 +65,5 @@ public class YuItem extends Item
             tooltip.add(I18n.format("tooltip." + name, meta));
         }
     }
+
 }

@@ -1,9 +1,9 @@
 package jp.co.yukkuraft;
 
 import jp.co.yukkuraft.block.BlockBeltConveyor;
+import jp.co.yukkuraft.block.BlockFactoryGlass;
 import jp.co.yukkuraft.block.BlockHouraku;
 import jp.co.yukkuraft.block.BlockMincer;
-import jp.co.yukkuraft.block.BlockFactoryGlass;
 import jp.co.yukkuraft.block.BlockTest0;
 import jp.co.yukkuraft.block.base.YuBlock;
 import jp.co.yukkuraft.test.BlockHollow;
@@ -60,36 +60,37 @@ public class YuBlocks
     static
     {
         // Simple Block
-        YUKARI_BLOCK = new YuBlock("yukari_block", Material.IRON, SoundType.METAL, true)
+        YUKARI_BLOCK = new YuBlock("yukari_block", Material.IRON, SoundType.METAL)
+                .setTooltipVisible()
                 .setHardness(5.0F).setResistance(6000000.0F).setLightLevel(1.0F);
-        SUGAR_BLOCK = new YuBlock("sugar_block", Material.SAND, SoundType.SAND, false);
-        BEEF_BLOCK = new YuBlock("beef_block", Material.CLAY, SoundType.SLIME, false);
-        STRANGE_MEAT_BLOCK = new YuBlock("strange_meat_block", Material.CLAY, SoundType.SLIME, false);
-        COOKED_MEAT_BLOCK = new YuBlock("cooked_meat_block", Material.CLAY, SoundType.PLANT, false);
-        MUGSHOT_BACKGROUND = new YuBlock("mugshot_background", Material.IRON, SoundType.METAL, false)
+        SUGAR_BLOCK = new YuBlock("sugar_block", Material.SAND, SoundType.SAND);
+        BEEF_BLOCK = new YuBlock("beef_block", Material.CLAY, SoundType.SLIME);
+        STRANGE_MEAT_BLOCK = new YuBlock("strange_meat_block", Material.CLAY, SoundType.SLIME);
+        COOKED_MEAT_BLOCK = new YuBlock("cooked_meat_block", Material.CLAY, SoundType.PLANT);
+        MUGSHOT_BACKGROUND = new YuBlock("mugshot_background", Material.IRON, SoundType.METAL)
                 .setHardness(5.0F).setResistance(10.0F);
         // Custom Block
-        MINCER = new BlockMincer("mincer", Material.IRON, SoundType.METAL, false)
+        MINCER = new BlockMincer("mincer", Material.IRON, SoundType.METAL)
                 .setHardness(5.0F).setResistance(10.0F);
-        BELT_CONVEYOR = new BlockBeltConveyor("belt_conveyor", Material.IRON, SoundType.METAL, false)
+        BELT_CONVEYOR = new BlockBeltConveyor("belt_conveyor", Material.IRON, SoundType.METAL)
                 .setHardness(5.0F).setResistance(10.0F);
-        HOURAKU_OFF = new BlockHouraku("block_houraku_off", Material.IRON, SoundType.METAL, false, false)
+        HOURAKU_OFF = new BlockHouraku("block_houraku_off", Material.IRON, SoundType.METAL, false)
                 .setHardness(5.0F).setResistance(10.0F);
-        HOURAKU_ON = new BlockHouraku("block_houraku_on", Material.IRON, SoundType.METAL, false, true)
+        HOURAKU_ON = new BlockHouraku("block_houraku_on", Material.IRON, SoundType.METAL, true)
                 .setHardness(5.0F).setResistance(10.0F).setLightLevel(1.0F);
-        FACTORY_GLASS = new BlockFactoryGlass("factory_glass", Material.GLASS, SoundType.GLASS, false)
+        FACTORY_GLASS = new BlockFactoryGlass("factory_glass", Material.GLASS, SoundType.GLASS)
                 .setHardness(5.0F).setResistance(10.0F);
         // TileEntity Block
-        YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa("yukkuri_marisa_block", Material.CLAY, SoundType.SLIME, false);
-        YUKKURI_REIMU_BLOCK = new BlockYukkuriReimu("yukkuri_reimu_block", Material.CLAY, SoundType.SLIME, false);
-        YUKKURI_ENGINE = new BlockYukkuriEngine("yukkuri_engine", Material.IRON, SoundType.METAL, false)
+        YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa("yukkuri_marisa_block", Material.CLAY, SoundType.SLIME);
+        YUKKURI_REIMU_BLOCK = new BlockYukkuriReimu("yukkuri_reimu_block", Material.CLAY, SoundType.SLIME);
+        YUKKURI_ENGINE = new BlockYukkuriEngine("yukkuri_engine", Material.IRON, SoundType.METAL)
                 .setHardness(5.0F).setResistance(10.0F);
-        ROLLER = new BlockRoller("roller", Material.IRON, SoundType.METAL, false)
+        ROLLER = new BlockRoller("roller", Material.IRON, SoundType.METAL)
                 .setHardness(5.0F).setResistance(10.0F);
         // Test Block
-        TEST0 = new BlockTest0("test0", Material.IRON, SoundType.METAL, false);
-        TEST1 = new BlockStone("test1", Material.IRON, SoundType.METAL, false);
-        TEST2 = new BlockHollow("test2", Material.IRON, SoundType.METAL, false);
+        TEST0 = new BlockTest0("test0", Material.IRON, SoundType.METAL);
+        TEST1 = new BlockStone("test1", Material.IRON, SoundType.METAL);
+        TEST2 = new BlockHollow("test2", Material.IRON, SoundType.METAL);
     }
 
     // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
@@ -135,7 +136,7 @@ public class YuBlocks
     }
 
     // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
-    // ここからブロックモデルの登録
+    // ここからモデルの登録
 
     public static void registerModels()
     {
@@ -170,7 +171,7 @@ public class YuBlocks
     }
 
     // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
-    // ここからブロックの精錬レシピの登録
+    // ここから精錬レシピの登録
 
     public static void registerSmeltings()
     {

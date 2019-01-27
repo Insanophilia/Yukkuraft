@@ -7,9 +7,9 @@ import net.minecraft.world.World;
 
 public class BlockHollow extends YuMultiBlock
 {
-    public BlockHollow(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockHollow(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     @Override

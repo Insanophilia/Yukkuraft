@@ -29,9 +29,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public abstract class BlockYukkuriBase extends YuBlock
 {
-    public BlockYukkuriBase(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockYukkuriBase(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // ここから TileEntity の設定

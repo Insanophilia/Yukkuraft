@@ -1,6 +1,7 @@
 package jp.co.yukkuraft.item;
 
 import jp.co.yukkuraft.YuBlocks;
+import jp.co.yukkuraft.item.base.YuItem;
 import jp.co.yukkuraft.tileentity.engine.TileYukkuriEngine;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -16,9 +17,9 @@ import net.minecraft.world.World;
 
 public class ItemYukkuriEngine extends YuItem
 {
-    public ItemYukkuriEngine(String name, boolean hasTooltip)
+    public ItemYukkuriEngine(String name)
     {
-        super(name, hasTooltip);
+        super(name);
     }
 
     // 右クリック時の処理

@@ -29,11 +29,14 @@ public class YuBlock extends Block
     /** 説明文の有無 */
     public boolean hasTooltip = false;
 
-    /** シンプルな設定でブロックを作成します。 */
-    public YuBlock(String name, Material material, SoundType soundType, boolean hasTooltip)
+    /** シンプルな設定でブロックを作成します。
+     * @param name 名称
+     * @param material 材質
+     * @param soundType 効果音タイプ
+     */
+    public YuBlock(String name, Material material, SoundType soundType)
     {
         super(material);
-        this.hasTooltip = hasTooltip;
 
         // クリエイティブタブ
         this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
@@ -53,39 +56,11 @@ public class YuBlock extends Block
         this.setDefaultState(this.blockState.getBaseState());
     }
 
-    /**
-     * このコンストラクタは指定の条件でシンプルなブロックを作成します。
-     *
-     * @param material 材質
-     * @param name 名称
-     * @param hasTooltip 説明文の有無
-     * @param hardness 硬度
-     * @param resistance 爆発耐性
-     * @param soundType 効果音タイプ
-     * @param lightLevel 明るさ
-     */
-    public YuBlock(Material material, String name, boolean hasTooltip, float hardness, float resistance,
-            SoundType soundType, float lightLevel)
+    // 説明文を表示する。
+    public Block setTooltipVisible()
     {
-        super(material);
-        this.hasTooltip = hasTooltip;
-
-        // クリエイティブタブ
-        this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
-        // 非翻訳名称
-        this.setUnlocalizedName(name);
-        // 登録名称
-        this.setRegistryName(ModCore.MOD_ID, name);
-        // 硬度
-        this.setHardness(hardness);
-        // 爆発耐性
-        this.setResistance(resistance);
-        // 効果音タイプ
-        this.setSoundType(soundType);
-        // 明るさ 0.0F～1.0F
-        this.setLightLevel(lightLevel);
-        // DefaultState設定
-        this.setDefaultState(this.blockState.getBaseState());
+        this.hasTooltip = true;
+        return this;
     }
 
     // 説明文追加の処理

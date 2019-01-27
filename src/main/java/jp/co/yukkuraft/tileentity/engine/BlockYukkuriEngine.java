@@ -28,9 +28,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class BlockYukkuriEngine extends YuMultiBlock
 {
-    public BlockYukkuriEngine(String name, Material material, SoundType soundType, boolean hasTooltip)
+    public BlockYukkuriEngine(String name, Material material, SoundType soundType)
     {
-        super(name, material, soundType, hasTooltip);
+        super(name, material, soundType);
     }
 
     // ここから TileEntity の設定

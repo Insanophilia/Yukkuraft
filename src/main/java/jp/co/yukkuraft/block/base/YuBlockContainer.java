@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import jp.co.yukkuraft.ModCore;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -29,11 +30,14 @@ public abstract class YuBlockContainer extends BlockContainer
     /** 説明文の有無 */
     public boolean hasTooltip = false;
 
-    /** シンプルな設定でブロックを作成します。 */
-    public YuBlockContainer(String name, Material material, SoundType soundType, boolean hasTooltip)
+    /** シンプルな設定でブロックを作成します。
+     * @param name 名称
+     * @param material 材質
+     * @param soundType 効果音タイプ
+     */
+    public YuBlockContainer(String name, Material material, SoundType soundType)
     {
         super(material);
-        this.hasTooltip = hasTooltip;
 
         // クリエイティブタブ
         this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
@@ -51,6 +55,13 @@ public abstract class YuBlockContainer extends BlockContainer
         this.setLightLevel(0F);
         // DefaultState設定
         this.setDefaultState(this.blockState.getBaseState());
+    }
+
+    // 説明文を表示する。
+    public Block setTooltipVisible()
+    {
+        this.hasTooltip = true;
+        return this;
     }
 
     // 説明文追加の処理

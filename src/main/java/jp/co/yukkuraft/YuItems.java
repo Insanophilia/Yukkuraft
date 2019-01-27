@@ -4,9 +4,9 @@ import jp.co.yukkuraft.constant.YuArmorMaterials;
 import jp.co.yukkuraft.item.ItemYukkuriEngine;
 import jp.co.yukkuraft.item.ItemYukkuriMarisaBlock;
 import jp.co.yukkuraft.item.ItemYukkuriReimuBlock;
-import jp.co.yukkuraft.item.YuArmor;
-import jp.co.yukkuraft.item.YuFood;
-import jp.co.yukkuraft.item.YuItem;
+import jp.co.yukkuraft.item.base.YuArmor;
+import jp.co.yukkuraft.item.base.YuFood;
+import jp.co.yukkuraft.item.base.YuItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
@@ -16,38 +16,74 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
- * このクラスは Mod Item の登録を行います。
+ * このクラスは「MODで追加されるアイテム」の登録を行います。
  *
  * @author Insanophilia
  *
  */
 public class YuItems
 {
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからアイテムのインスタンス
+
     // Simple Item
-    public static final Item PURPLE_DIAMOND    = new YuItem("purple_diamond", false);
-    public static final Item LUMP_OF_SUGAR     = new YuItem("lump_of_sugar", false);
-    public static final Item YUKKURI_MARISA    = new YuItem("yukkuri_marisa", true);
-    public static final Item OKAZARI_MARISA    = new YuItem("okazari_marisa", false);
-    public static final Item OKAZARI_REIMU     = new YuItem("okazari_reimu", false);
-    public static final Item RING_OF_MOONLIGHT = new YuItem("ring_of_moonlight", false);
+    public static final Item PURPLE_DIAMOND;
+    public static final Item LUMP_OF_SUGAR;
+    public static final Item YUKKURI_MARISA;
+    public static final Item OKAZARI_MARISA;
+    public static final Item OKAZARI_REIMU;
+    public static final Item RING_OF_MOONLIGHT;
+
+    // Custom Item
+    public static final Item ITEM_YUKKURI_MARISA_BLOCK;
+    public static final Item ITEM_YUKKURI_REIMU_BLOCK;
+    public static final Item ITEM_YUKKURI_ENGINE;
 
     // Food Item
-    public static final Item ANKO          = new YuFood(1, 0.1F, false, true, "anko", false);
-    public static final Item MATTER_ANKO   = new YuFood(10, 1.0F, false, true, "matter_anko", false);
-    public static final Item SHIRATAMA     = new YuFood(1, 0.1F, false, true, "shiratama", false);
-    public static final Item STRANGE_MEAT  = new YuFood(3, 0.3F, false, true, "strange_meat", false);
-    public static final Item GROUND_MEAT   = new YuFood(3, 0.3F, false, true, "ground_meat", false);
-    public static final Item HAMBURG_STEAK = new YuFood(8, 0.8F, false, true, "hamburg_steak", false);
-    public static final Item YAKI_MANJUU   = new YuFood(6, 0.6F, false, true, "yaki_manjuu", false);
-    // Armor
-    public static final Item TEST_HELMET    = new YuArmor(YuArmorMaterials.TEST, 0, "test_helmet", EntityEquipmentSlot.HEAD);
-    public static final Item TEST_GAUNTLETS = new YuArmor(YuArmorMaterials.TEST, 0, "test_gauntlets", EntityEquipmentSlot.CHEST);
-    public static final Item TEST_LEGGINGS  = new YuArmor(YuArmorMaterials.TEST, 0, "test_leggings", EntityEquipmentSlot.LEGS);
-    public static final Item TEST_GREAVES   = new YuArmor(YuArmorMaterials.TEST, 0, "test_greaves", EntityEquipmentSlot.FEET);
-    // Custom Item
-    public static final Item ITEM_YUKKURI_MARISA_BLOCK = new ItemYukkuriMarisaBlock("item_yukkuri_marisa_block", true);
-    public static final Item ITEM_YUKKURI_REIMU_BLOCK  = new ItemYukkuriReimuBlock("item_yukkuri_reimu_block", true);
-    public static final Item ITEM_YUKKURI_ENGINE       = new ItemYukkuriEngine("item_yukkuri_engine", false);
+    public static final Item ANKO;
+    public static final Item MATTER_ANKO;
+    public static final Item SHIRATAMA;
+    public static final Item STRANGE_MEAT;
+    public static final Item GROUND_MEAT;
+    public static final Item HAMBURG_STEAK;
+    public static final Item YAKI_MANJUU;
+
+    // Armor Item
+    public static final Item TEST_HELMET;
+    public static final Item TEST_GAUNTLETS;
+    public static final Item TEST_LEGGINGS;
+    public static final Item TEST_GREAVES;
+
+    static
+    {
+        // Simple Item
+        PURPLE_DIAMOND = new YuItem("purple_diamond");
+        LUMP_OF_SUGAR = new YuItem("lump_of_sugar");
+        YUKKURI_MARISA = new YuItem("yukkuri_marisa").setTooltipVisible();
+        OKAZARI_MARISA = new YuItem("okazari_marisa");
+        OKAZARI_REIMU = new YuItem("okazari_reimu");
+        RING_OF_MOONLIGHT = new YuItem("ring_of_moonlight").setMaxStackSize(1);
+        // Custom Item
+        ITEM_YUKKURI_MARISA_BLOCK = new ItemYukkuriMarisaBlock("item_yukkuri_marisa_block").setTooltipVisible();
+        ITEM_YUKKURI_REIMU_BLOCK = new ItemYukkuriReimuBlock("item_yukkuri_reimu_block").setTooltipVisible();
+        ITEM_YUKKURI_ENGINE = new ItemYukkuriEngine("item_yukkuri_engine");
+        // Food Item
+        ANKO = new YuFood("anko", 1, 0.1F, false).setAlwaysEdible();
+        MATTER_ANKO = new YuFood("matter_anko", 10, 1.0F, false).setAlwaysEdible();
+        SHIRATAMA = new YuFood("shiratama", 1, 0.1F, false).setAlwaysEdible();
+        YAKI_MANJUU = new YuFood("yaki_manjuu", 6, 0.6F, false).setAlwaysEdible();
+        STRANGE_MEAT = new YuFood("strange_meat", 3, 0.3F, false);
+        GROUND_MEAT = new YuFood("ground_meat", 3, 0.3F, false);
+        HAMBURG_STEAK = new YuFood("hamburg_steak", 8, 0.8F, false);
+        // Armor Item
+        TEST_HELMET = new YuArmor("test_helmet", YuArmorMaterials.TEST, 0, EntityEquipmentSlot.HEAD);
+        TEST_GAUNTLETS = new YuArmor("test_gauntlets", YuArmorMaterials.TEST, 0, EntityEquipmentSlot.CHEST);
+        TEST_LEGGINGS = new YuArmor("test_leggings", YuArmorMaterials.TEST, 0, EntityEquipmentSlot.LEGS);
+        TEST_GREAVES = new YuArmor("test_greaves", YuArmorMaterials.TEST, 0, EntityEquipmentSlot.FEET);
+    }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからアイテムの登録
 
     public static void registerItems()
     {
@@ -59,23 +95,25 @@ public class YuItems
         registerItem(OKAZARI_REIMU);
         registerItem(RING_OF_MOONLIGHT);
 
-        // Food Item
-        registerItem(ANKO);
-        registerItem(MATTER_ANKO);
-        registerItem(SHIRATAMA);
-        registerItem(STRANGE_MEAT);
-        registerItem(GROUND_MEAT);
-        registerItem(HAMBURG_STEAK);
-        registerItem(YAKI_MANJUU);
-        // Armor
-        registerItem(TEST_HELMET);
-        registerItem(TEST_GAUNTLETS);
-        registerItem(TEST_LEGGINGS);
-        registerItem(TEST_GREAVES);
         // Custom Item
         registerItem(ITEM_YUKKURI_MARISA_BLOCK);
         registerItem(ITEM_YUKKURI_REIMU_BLOCK);
         registerItem(ITEM_YUKKURI_ENGINE);
+
+        // Food Item
+        registerItem(ANKO);
+        registerItem(MATTER_ANKO);
+        registerItem(SHIRATAMA);
+        registerItem(YAKI_MANJUU);
+        registerItem(STRANGE_MEAT);
+        registerItem(GROUND_MEAT);
+        registerItem(HAMBURG_STEAK);
+
+        // Armor Item
+        registerItem(TEST_HELMET);
+        registerItem(TEST_GAUNTLETS);
+        registerItem(TEST_LEGGINGS);
+        registerItem(TEST_GREAVES);
 
     }
 
@@ -83,6 +121,9 @@ public class YuItems
     {
         ForgeRegistries.ITEMS.register(item);
     }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここからモデルの登録
 
     public static void registerModels()
     {
@@ -94,30 +135,36 @@ public class YuItems
         registerModel(OKAZARI_REIMU);
         registerModel(RING_OF_MOONLIGHT);
 
-        // Food Item
-        registerModel(ANKO);
-        registerModel(MATTER_ANKO);
-        registerModel(SHIRATAMA);
-        registerModel(STRANGE_MEAT);
-        registerModel(GROUND_MEAT);
-        registerModel(HAMBURG_STEAK);
-        registerModel(YAKI_MANJUU);
-        // Armor
-        registerModel(TEST_HELMET);
-        registerModel(TEST_GAUNTLETS);
-        registerModel(TEST_LEGGINGS);
-        registerModel(TEST_GREAVES);
         // Custom Item
         registerModel(ITEM_YUKKURI_MARISA_BLOCK);
         registerModel(ITEM_YUKKURI_REIMU_BLOCK);
         registerModel(ITEM_YUKKURI_ENGINE);
 
+        // Food Item
+        registerModel(ANKO);
+        registerModel(MATTER_ANKO);
+        registerModel(SHIRATAMA);
+        registerModel(YAKI_MANJUU);
+        registerModel(STRANGE_MEAT);
+        registerModel(GROUND_MEAT);
+        registerModel(HAMBURG_STEAK);
+
+        // Armor Item
+        registerModel(TEST_HELMET);
+        registerModel(TEST_GAUNTLETS);
+        registerModel(TEST_LEGGINGS);
+        registerModel(TEST_GREAVES);
+
     }
 
     private static void registerModel(Item item)
     {
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(item, 0,
+                new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }
+
+    // ---------*---------*---------*---------*---------*---------*---------*---------*---------*---------*
+    // ここから精錬レシピの登録
 
     public static void registerSmeltings()
     {
