@@ -30,6 +30,7 @@ item.item_yukkuri_marisa_block.name=ゆっくり魔理沙ブロック
 item.item_yukkuri_reimu_block.name=ゆっくり霊夢ブロック
 
 item.ring_of_moonlight.name=月明かりの腕輪
+item.flamethrower.name=火炎放射器
 ########################################
 ## BLOCK_NAME
 tile.yukari_block.name=ゆかりブロック

@@ -1,6 +1,7 @@
 package jp.co.yukkuraft;
 
 import jp.co.yukkuraft.constant.YuArmorMaterials;
+import jp.co.yukkuraft.item.ItemFlamethrower;
 import jp.co.yukkuraft.item.ItemYukkuriEngine;
 import jp.co.yukkuraft.item.ItemYukkuriMarisaBlock;
 import jp.co.yukkuraft.item.ItemYukkuriReimuBlock;
@@ -38,6 +39,7 @@ public class YuItems
     public static final Item ITEM_YUKKURI_MARISA_BLOCK;
     public static final Item ITEM_YUKKURI_REIMU_BLOCK;
     public static final Item ITEM_YUKKURI_ENGINE;
+    public static final Item ITEM_FLAMETHROWER;
 
     // Food Item
     public static final Item ANKO;
@@ -67,6 +69,9 @@ public class YuItems
         ITEM_YUKKURI_MARISA_BLOCK = new ItemYukkuriMarisaBlock("item_yukkuri_marisa_block").setTooltipVisible();
         ITEM_YUKKURI_REIMU_BLOCK = new ItemYukkuriReimuBlock("item_yukkuri_reimu_block").setTooltipVisible();
         ITEM_YUKKURI_ENGINE = new ItemYukkuriEngine("item_yukkuri_engine");
+        ITEM_FLAMETHROWER = new ItemFlamethrower("flamethrower")
+                .setMaxStackSize(1).setMaxDamage(256);
+
         // Food Item
         ANKO = new YuFood("anko", 1, 0.1F, false).setAlwaysEdible();
         MATTER_ANKO = new YuFood("matter_anko", 10, 1.0F, false).setAlwaysEdible();
@@ -99,6 +104,7 @@ public class YuItems
         registerItem(ITEM_YUKKURI_MARISA_BLOCK);
         registerItem(ITEM_YUKKURI_REIMU_BLOCK);
         registerItem(ITEM_YUKKURI_ENGINE);
+        registerItem(ITEM_FLAMETHROWER);
 
         // Food Item
         registerItem(ANKO);
@@ -139,6 +145,7 @@ public class YuItems
         registerModel(ITEM_YUKKURI_MARISA_BLOCK);
         registerModel(ITEM_YUKKURI_REIMU_BLOCK);
         registerModel(ITEM_YUKKURI_ENGINE);
+        registerModel(ITEM_FLAMETHROWER);
 
         // Food Item
         registerModel(ANKO);

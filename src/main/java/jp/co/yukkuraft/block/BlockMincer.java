@@ -99,7 +99,6 @@ public class BlockMincer extends YuBlock
 
     // ランダムに実行される描画処理
     @SideOnly(Side.CLIENT)
-    @SuppressWarnings("incomplete-switch")
     @Override
     public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
