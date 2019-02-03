@@ -1,8 +1,7 @@
-package jp.co.yukkuraft.item;
+package jp.co.yukkuraft.complex.engine;
 
 import jp.co.yukkuraft.YuBlocks;
 import jp.co.yukkuraft.item.base.YuItem;
-import jp.co.yukkuraft.tileentity.engine.TileYukkuriEngine;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
