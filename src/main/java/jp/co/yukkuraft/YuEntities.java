@@ -11,6 +11,7 @@ import jp.co.yukkuraft.complex.yukkuri.entity.RenderYukkuriReimu;
 import jp.co.yukkuraft.constant.YuColor;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
@@ -54,16 +55,16 @@ public class YuEntities
 
     private static int entityId = 1;
 
-    private static void registerEntitie(String name, Class clazz, int trackingRange, int updateFrequency,
-            boolean sendsVelocityUpdates, int eggPrimary, int eggSecondary)
+    private static void registerEntitie(String name, Class<? extends Entity> clazz, int trackingRange,
+            int updateFrequency, boolean sendsVelocityUpdates, int eggPrimary, int eggSecondary)
     {
         EntityRegistry.registerModEntity(new ResourceLocation(name),
                 clazz, name, entityId++, ModCore.instance, trackingRange, updateFrequency, sendsVelocityUpdates,
                 eggPrimary, eggSecondary);
     }
 
-    private static void registerEntitie(String name, Class clazz, int trackingRange, int updateFrequency,
-            boolean sendsVelocityUpdates)
+    private static void registerEntitie(String name, Class<? extends Entity> clazz, int trackingRange,
+            int updateFrequency, boolean sendsVelocityUpdates)
     {
         EntityRegistry.registerModEntity(new ResourceLocation(name),
                 clazz, name, entityId++, ModCore.instance, trackingRange, updateFrequency, sendsVelocityUpdates);

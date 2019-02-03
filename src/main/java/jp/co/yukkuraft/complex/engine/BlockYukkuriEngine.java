@@ -74,6 +74,7 @@ public class BlockYukkuriEngine extends YuBlockContainer
     }
 
     // マウス選択の当たり判定の定義
+    @SuppressWarnings("deprecation")
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {

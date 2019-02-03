@@ -43,8 +43,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeDesert;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -229,7 +227,8 @@ public class EntityYukkuri extends EntityAnimal
 
         if (jumping)
         {
-            this.playSound(this.getJumpSound(), this.getSoundVolume(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 0.8F);
+            this.playSound(this.getJumpSound(), this.getSoundVolume(),
+                    ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 0.8F);
         }
     }
 
@@ -389,7 +388,8 @@ public class EntityYukkuri extends EntityAnimal
         {
             float f5 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.width;
             float f6 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.width;
-            this.world.spawnParticle(EnumParticleTypes.WATER_SPLASH, this.posX + (double) f5, (double) (f2 + 1.0F), this.posZ + (double) f6, this.motionX, this.motionY,
+            this.world.spawnParticle(EnumParticleTypes.WATER_SPLASH, this.posX + (double) f5, (double) (f2 + 1.0F),
+                    this.posZ + (double) f6, this.motionX, this.motionY,
                     this.motionZ);
         }
     }
@@ -499,7 +499,8 @@ public class EntityYukkuri extends EntityAnimal
     public boolean isBreedingItem(ItemStack stack)
     {
         Item item = stack.getItem();
-        return item == Item.getItemFromBlock(Blocks.BROWN_MUSHROOM) || item == Item.getItemFromBlock(Blocks.RED_MUSHROOM);
+        return item == Item.getItemFromBlock(Blocks.BROWN_MUSHROOM)
+                || item == Item.getItemFromBlock(Blocks.RED_MUSHROOM);
     }
 
     // ▼ ラビットタイプは使わない
@@ -535,7 +536,6 @@ public class EntityYukkuri extends EntityAnimal
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata)
     {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
-        int i = this.getRandomRabbitType();
         boolean flag = false;
 
         //        if (livingdata instanceof EntityYukkuri.RabbitTypeData)
@@ -557,23 +557,6 @@ public class EntityYukkuri extends EntityAnimal
         return livingdata;
     }
 
-    private int getRandomRabbitType()
-    {
-        Biome biome = this.world.getBiome(new BlockPos(this));
-        int i = this.rand.nextInt(100);
-
-        if (biome.isSnowyBiome())
-        {
-            return i < 80 ? 1 : 3;
-        } else if (biome instanceof BiomeDesert)
-        {
-            return 4;
-        } else
-        {
-            return i < 50 ? 0 : (i < 90 ? 5 : 2);
-        }
-    }
-
     /**
      * Returns true if {@link net.minecraft.entity.passive.EntityRabbit#carrotTicks carrotTicks} has reached zero
      */
@@ -586,8 +569,10 @@ public class EntityYukkuri extends EntityAnimal
     {
         BlockCarrot blockcarrot = (BlockCarrot) Blocks.CARROTS;
         IBlockState iblockstate = blockcarrot.withAge(blockcarrot.getMaxAge());
-        this.world.spawnParticle(EnumParticleTypes.BLOCK_DUST, this.posX + (double) (this.rand.nextFloat() * this.width * 2.0F) - (double) this.width,
-                this.posY + 0.5D + (double) (this.rand.nextFloat() * this.height), this.posZ + (double) (this.rand.nextFloat() * this.width * 2.0F) - (double) this.width, 0.0D,
+        this.world.spawnParticle(EnumParticleTypes.BLOCK_DUST,
+                this.posX + (double) (this.rand.nextFloat() * this.width * 2.0F) - (double) this.width,
+                this.posY + 0.5D + (double) (this.rand.nextFloat() * this.height),
+                this.posZ + (double) (this.rand.nextFloat() * this.width * 2.0F) - (double) this.width, 0.0D,
                 0.0D, 0.0D, Block.getStateId(iblockstate));
         this.carrotTicks = 40;
     }
@@ -613,7 +598,8 @@ public class EntityYukkuri extends EntityAnimal
     {
         private final EntityYukkuri rabbit;
 
-        public AIAvoidEntity(EntityYukkuri entityYukkuri, Class<T> p_i46403_2_, float p_i46403_3_, double p_i46403_4_, double p_i46403_6_)
+        public AIAvoidEntity(EntityYukkuri entityYukkuri, Class<T> p_i46403_2_, float p_i46403_3_, double p_i46403_4_,
+                double p_i46403_6_)
         {
             super(entityYukkuri, p_i46403_2_, p_i46403_3_, p_i46403_4_, p_i46403_6_);
             this.rabbit = entityYukkuri;
@@ -706,7 +692,8 @@ public class EntityYukkuri extends EntityAnimal
         public void updateTask()
         {
             super.updateTask();
-            this.rabbit.getLookHelper().setLookPosition((double) this.destinationBlock.getX() + 0.5D, (double) (this.destinationBlock.getY() + 1),
+            this.rabbit.getLookHelper().setLookPosition((double) this.destinationBlock.getX() + 0.5D,
+                    (double) (this.destinationBlock.getY() + 1),
                     (double) this.destinationBlock.getZ() + 0.5D, 10.0F, (float) this.rabbit.getVerticalFaceSpeed());
 
             if (this.getIsAboveDestination())
@@ -726,7 +713,8 @@ public class EntityYukkuri extends EntityAnimal
                         world.destroyBlock(blockpos, true);
                     } else
                     {
-                        world.setBlockState(blockpos, iblockstate.withProperty(BlockCarrot.AGE, Integer.valueOf(integer.intValue() - 1)), 2);
+                        world.setBlockState(blockpos,
+                                iblockstate.withProperty(BlockCarrot.AGE, Integer.valueOf(integer.intValue() - 1)), 2);
                         world.playEvent(2001, blockpos, Block.getStateId(iblockstate));
                     }
 
@@ -814,7 +802,8 @@ public class EntityYukkuri extends EntityAnimal
 
         public void onUpdateMoveHelper()
         {
-            if (this.rabbit.onGround && !this.rabbit.isJumping && !((EntityYukkuri.RabbitJumpHelper) this.rabbit.jumpHelper).getIsJumping())
+            if (this.rabbit.onGround && !this.rabbit.isJumping
+                    && !((EntityYukkuri.RabbitJumpHelper) this.rabbit.jumpHelper).getIsJumping())
             {
                 this.rabbit.setMovementSpeed(0.0D);
             } else if (this.isUpdating())

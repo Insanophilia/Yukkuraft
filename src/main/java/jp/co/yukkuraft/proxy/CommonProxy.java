@@ -21,6 +21,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public abstract class CommonProxy
 {
+    @SuppressWarnings("deprecation")
     public void preInit()
     {
         // Item 登録
