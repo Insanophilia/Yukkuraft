@@ -1,6 +1,6 @@
-package jp.co.yukkuraft.tileentity.yukkuri;
+package jp.co.yukkuraft.complex.yukkuri.block;
 
-import jp.co.yukkuraft.entity.model.ModelYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.ModelYukkuriReimu;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;

@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity.yukkuri;
+package jp.co.yukkuraft.complex.yukkuri.block;
 
 /**
  * このクラスは「ゆっくり魔理沙ブロック」のタイルエンティティ定義を行います。

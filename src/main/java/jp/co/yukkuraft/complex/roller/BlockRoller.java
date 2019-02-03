@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity.roller;
+package jp.co.yukkuraft.complex.roller;
 
 import jp.co.yukkuraft.test.YuMultiBlock;
 import net.minecraft.block.SoundType;

@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity.yukkuri;
+package jp.co.yukkuraft.complex.yukkuri.block;
 
 import javax.annotation.Nullable;
 

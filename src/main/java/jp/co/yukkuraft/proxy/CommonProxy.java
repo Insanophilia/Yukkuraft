@@ -5,11 +5,11 @@ import jp.co.yukkuraft.YuEntities;
 import jp.co.yukkuraft.YuEventHandler;
 import jp.co.yukkuraft.YuItems;
 import jp.co.yukkuraft.complex.engine.TileYukkuriEngine;
+import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriMarisa;
+import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriReimu;
 import jp.co.yukkuraft.constant.YuLootTableList;
 import jp.co.yukkuraft.test.TileHollowMultiBlock;
 import jp.co.yukkuraft.test.TileStoneMultiblock;
-import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriMarisa;
-import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriReimu;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 

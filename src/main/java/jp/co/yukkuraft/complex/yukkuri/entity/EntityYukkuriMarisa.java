@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.entity;
+package jp.co.yukkuraft.complex.yukkuri.entity;
 
 import javax.annotation.Nullable;
 
@@ -8,14 +8,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 /**
- * このクラスは「ゆっくり霊夢」を定義します。
+ * このクラスは「ゆっくり魔理沙」を定義します。
  *
  * @author Insanophilia
  *
  */
-public class EntityYukkuriReimu extends EntityYukkuri
+public class EntityYukkuriMarisa extends EntityYukkuri
 {
-    public EntityYukkuriReimu(World worldIn)
+    public EntityYukkuriMarisa(World worldIn)
     {
         super(worldIn);
     }
@@ -25,13 +25,13 @@ public class EntityYukkuriReimu extends EntityYukkuri
     @Nullable
     protected ResourceLocation getLootTable()
     {
-        return YuLootTableList.YUKKURI_REIMU;
+        return YuLootTableList.YUKKURI_MARISA;
     }
 
     // 繁殖時に発生する子ゆっくりを設定
     @Override
     public EntityAgeable createChild(EntityAgeable ageable)
     {
-        return new EntityYukkuriReimu(this.world);
+        return new EntityYukkuriMarisa(this.world);
     }
 }

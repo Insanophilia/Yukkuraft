@@ -1,6 +1,6 @@
 package jp.co.yukkuraft.complex.engine;
 
-import jp.co.yukkuraft.entity.model.ModelYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.ModelYukkuriReimu;
 import jp.co.yukkuraft.test.TileBigBlock;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;

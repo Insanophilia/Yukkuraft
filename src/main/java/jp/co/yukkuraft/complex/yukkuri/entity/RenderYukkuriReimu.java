@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.entity;
+package jp.co.yukkuraft.complex.yukkuri.entity;
 
 import jp.co.yukkuraft.ModCore;
 import net.minecraft.client.model.ModelBase;

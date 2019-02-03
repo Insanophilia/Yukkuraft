@@ -1,8 +1,7 @@
-package jp.co.yukkuraft.item;
+package jp.co.yukkuraft.complex.yukkuri.block;
 
 import jp.co.yukkuraft.YuBlocks;
 import jp.co.yukkuraft.item.base.YuItem;
-import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriMarisa;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -18,13 +17,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 /**
- * このクラスはアイテム状態の「ゆっくり魔理沙ブロック」の定義を行います。
+ * このクラスはアイテム状態の「ゆっくり霊夢ブロック」の定義を行います。
  *
  * @author Insanophilia
  */
-public class ItemYukkuriMarisaBlock extends YuItem
+public class ItemYukkuriReimuBlock extends YuItem
 {
-    public ItemYukkuriMarisaBlock(String name)
+    public ItemYukkuriReimuBlock(String name)
     {
         super(name);
     }
@@ -55,15 +54,15 @@ public class ItemYukkuriMarisaBlock extends YuItem
                 return EnumActionResult.SUCCESS;
             } else
             {
-                worldIn.setBlockState(pos, YuBlocks.YUKKURI_MARISA_BLOCK.getDefaultState());
+                worldIn.setBlockState(pos, YuBlocks.YUKKURI_REIMU_BLOCK.getDefaultState());
                 int i = MathHelper.floor((double) (player.rotationYaw * 16.0F / 360.0F) + 0.5D) & 15;
 
                 TileEntity tile = worldIn.getTileEntity(pos);
-                if (tile instanceof TileYukkuriMarisa)
+                if (tile instanceof TileYukkuriReimu)
                 {
                     // タイルエンティティに回転値を設定する。
-                    TileYukkuriMarisa tileYukkuriMarisa = (TileYukkuriMarisa) tile;
-                    tileYukkuriMarisa.setRotation(i);
+                    TileYukkuriReimu tileYukkuriReimu = (TileYukkuriReimu) tile;
+                    tileYukkuriReimu.setRotation(i);
                 }
 
                 if (player instanceof EntityPlayerMP)

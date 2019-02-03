@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.entity;
+package jp.co.yukkuraft.complex.yukkuri.entity;
 
 import java.lang.reflect.Field;
 

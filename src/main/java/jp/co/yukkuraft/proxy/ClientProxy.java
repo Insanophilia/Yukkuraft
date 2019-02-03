@@ -5,10 +5,10 @@ import jp.co.yukkuraft.YuEntities;
 import jp.co.yukkuraft.YuItems;
 import jp.co.yukkuraft.complex.engine.TesrYukkuriEngine;
 import jp.co.yukkuraft.complex.engine.TileYukkuriEngine;
-import jp.co.yukkuraft.tileentity.yukkuri.TesrYukkuriMarisa;
-import jp.co.yukkuraft.tileentity.yukkuri.TesrYukkuriReimu;
-import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriMarisa;
-import jp.co.yukkuraft.tileentity.yukkuri.TileYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.block.TesrYukkuriMarisa;
+import jp.co.yukkuraft.complex.yukkuri.block.TesrYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriMarisa;
+import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriReimu;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 /**

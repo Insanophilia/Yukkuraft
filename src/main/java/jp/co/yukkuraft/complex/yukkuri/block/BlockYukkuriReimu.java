@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity.yukkuri;
+package jp.co.yukkuraft.complex.yukkuri.block;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.tileentity.yukkuri;
+package jp.co.yukkuraft.complex.yukkuri.block;
 
 import jp.co.yukkuraft.YuItems;
 import jp.co.yukkuraft.block.base.YuBlock;
