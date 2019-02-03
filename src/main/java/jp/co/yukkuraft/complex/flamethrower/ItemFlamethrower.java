@@ -1,8 +1,7 @@
-package jp.co.yukkuraft.item;
+package jp.co.yukkuraft.complex.flamethrower;
 
 import java.util.Random;
 
-import jp.co.yukkuraft.entity.EntityFlame;
 import jp.co.yukkuraft.item.base.YuItemBow;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -50,6 +49,15 @@ public class ItemFlamethrower extends YuItemBow
             }
             // ダメージ値を追加
             stack.setItemDamage(stack.getItemDamage() + 1);
+        } else
+        {
+            if (entityLiving instanceof EntityPlayer)
+            {
+                EntityPlayer entityplayer = (EntityPlayer) entityLiving;
+                worldIn.playSound((EntityPlayer) null, entityplayer.posX, entityplayer.posY, entityplayer.posZ,
+                        SoundEvents.BLOCK_STONE_BUTTON_CLICK_ON, SoundCategory.PLAYERS, 1.0F,
+                        1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + 0.5F);
+            }
         }
     }
 

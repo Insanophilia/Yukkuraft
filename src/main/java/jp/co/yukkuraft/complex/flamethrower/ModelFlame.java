@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.entity.model;
+package jp.co.yukkuraft.complex.flamethrower;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

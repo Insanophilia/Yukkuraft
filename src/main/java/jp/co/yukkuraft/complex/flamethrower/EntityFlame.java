@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.entity;
+package jp.co.yukkuraft.complex.flamethrower;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

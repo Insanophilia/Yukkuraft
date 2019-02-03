@@ -1,10 +1,10 @@
 package jp.co.yukkuraft;
 
+import jp.co.yukkuraft.complex.flamethrower.EntityFlame;
+import jp.co.yukkuraft.complex.flamethrower.RenderFlame;
 import jp.co.yukkuraft.constant.YuColor;
-import jp.co.yukkuraft.entity.EntityFlame;
 import jp.co.yukkuraft.entity.EntityYukkuriMarisa;
 import jp.co.yukkuraft.entity.EntityYukkuriReimu;
-import jp.co.yukkuraft.entity.RenderFlame;
 import jp.co.yukkuraft.entity.RenderYukkuriMarisa;
 import jp.co.yukkuraft.entity.RenderYukkuriReimu;
 import jp.co.yukkuraft.entity.model.ModelYukkuriMarisa;

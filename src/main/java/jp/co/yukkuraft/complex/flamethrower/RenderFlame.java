@@ -1,7 +1,6 @@
-package jp.co.yukkuraft.entity;
+package jp.co.yukkuraft.complex.flamethrower;
 
 import jp.co.yukkuraft.ModCore;
-import jp.co.yukkuraft.entity.model.ModelFlame;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderArrow;
 import net.minecraft.client.renderer.entity.RenderManager;

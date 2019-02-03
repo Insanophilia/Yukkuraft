@@ -1,7 +1,7 @@
 package jp.co.yukkuraft;
 
+import jp.co.yukkuraft.complex.flamethrower.ItemFlamethrower;
 import jp.co.yukkuraft.constant.YuArmorMaterials;
-import jp.co.yukkuraft.item.ItemFlamethrower;
 import jp.co.yukkuraft.item.ItemYukkuriEngine;
 import jp.co.yukkuraft.item.ItemYukkuriMarisaBlock;
 import jp.co.yukkuraft.item.ItemYukkuriReimuBlock;
