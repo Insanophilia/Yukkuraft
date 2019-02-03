@@ -1,7 +1,7 @@
 package jp.co.yukkuraft.complex.yukkuri.block;
 
 import jp.co.yukkuraft.YuBlocks;
-import jp.co.yukkuraft.item.base.YuItem;
+import jp.co.yukkuraft.base.item.YuItem;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;

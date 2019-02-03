@@ -1,7 +1,7 @@
 package jp.co.yukkuraft.complex.yukkuri.block;
 
 import jp.co.yukkuraft.YuItems;
-import jp.co.yukkuraft.block.base.YuBlock;
+import jp.co.yukkuraft.base.block.YuBlock;
 import jp.co.yukkuraft.constant.YuAABB;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

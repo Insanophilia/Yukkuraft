@@ -1,15 +1,15 @@
 package jp.co.yukkuraft;
 
-import jp.co.yukkuraft.block.BlockBeltConveyor;
-import jp.co.yukkuraft.block.BlockFactoryGlass;
-import jp.co.yukkuraft.block.BlockHouraku;
-import jp.co.yukkuraft.block.BlockMincer;
-import jp.co.yukkuraft.block.BlockTest0;
-import jp.co.yukkuraft.block.base.YuBlock;
+import jp.co.yukkuraft.base.block.YuBlock;
 import jp.co.yukkuraft.complex.engine.BlockYukkuriEngine;
 import jp.co.yukkuraft.complex.roller.BlockRoller;
 import jp.co.yukkuraft.complex.yukkuri.block.BlockYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.block.BlockYukkuriReimu;
+import jp.co.yukkuraft.simple.block.BlockBeltConveyor;
+import jp.co.yukkuraft.simple.block.BlockFactoryGlass;
+import jp.co.yukkuraft.simple.block.BlockHouraku;
+import jp.co.yukkuraft.simple.block.BlockMincer;
+import jp.co.yukkuraft.simple.block.BlockTest0;
 import jp.co.yukkuraft.test.BlockHollow;
 import jp.co.yukkuraft.test.BlockStone;
 import net.minecraft.block.Block;

@@ -1,6 +1,6 @@
 package jp.co.yukkuraft.test;
 
-import jp.co.yukkuraft.block.base.YuBlockContainer;
+import jp.co.yukkuraft.base.block.YuBlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 

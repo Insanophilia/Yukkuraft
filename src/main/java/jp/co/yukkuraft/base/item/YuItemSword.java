@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.item.base;
+package jp.co.yukkuraft.base.item;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package jp.co.yukkuraft.block;
+package jp.co.yukkuraft.simple.block;
 
 import jp.co.yukkuraft.YuBlocks;
-import jp.co.yukkuraft.block.base.YuBlock;
+import jp.co.yukkuraft.base.block.YuBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

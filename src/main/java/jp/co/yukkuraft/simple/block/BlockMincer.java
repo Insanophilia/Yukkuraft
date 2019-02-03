@@ -1,11 +1,11 @@
-package jp.co.yukkuraft.block;
+package jp.co.yukkuraft.simple.block;
 
 import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import jp.co.yukkuraft.block.base.YuBlock;
+import jp.co.yukkuraft.base.block.YuBlock;
 import jp.co.yukkuraft.constant.YuAABB;
 import jp.co.yukkuraft.constant.YuDamageSouce;
 import net.minecraft.block.SoundType;

@@ -1,10 +1,10 @@
-package jp.co.yukkuraft.block;
+package jp.co.yukkuraft.simple.block;
 
 import java.util.List;
 
 import javax.annotation.Nullable;
 
-import jp.co.yukkuraft.block.base.YuFacingBlock;
+import jp.co.yukkuraft.base.block.YuFacingBlock;
 import jp.co.yukkuraft.constant.YuAABB;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

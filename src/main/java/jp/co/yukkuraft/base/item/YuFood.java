@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.item.base;
+package jp.co.yukkuraft.base.item;
 
 import java.util.List;
 
@@ -8,30 +8,33 @@ import jp.co.yukkuraft.ModCore;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * このクラスは「MODで追加されるアイテムの基底クラス」です。
+ * このクラスは「MODで追加される食料アイテムの基底クラス」です。
  *
  * @author Insanophilia
  *
  */
-public class YuItem extends Item
+public class YuFood extends ItemFood
 {
     // 説明文の有無
     public boolean hasTooltip = false;
 
     /**
      * シンプルな設定でアイテムを作成します。
-     *
      * @param name 名称
+     * @param amount 満腹度の回復量
+     * @param saturation 腹持ち値
+     * @param isWolfFood 狼が食べるか
      */
-    public YuItem(String name)
+    public YuFood(String name, int amount, float saturation, boolean isWolfFood)
     {
-        super();
+        super(amount, saturation, isWolfFood);
 
         // クリエイティブタブ
         this.setCreativeTab(ModCore.YU_CREATIVE_TAB);
@@ -62,4 +65,5 @@ public class YuItem extends Item
             tooltip.add(I18n.format("tooltip." + name, meta));
         }
     }
+
 }

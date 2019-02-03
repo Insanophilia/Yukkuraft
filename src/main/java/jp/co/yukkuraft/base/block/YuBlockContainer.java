@@ -1,4 +1,4 @@
-package jp.co.yukkuraft.block.base;
+package jp.co.yukkuraft.base.block;
 
 import java.util.List;
 

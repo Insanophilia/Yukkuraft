@@ -3,8 +3,8 @@ package jp.co.yukkuraft.complex.engine;
 import java.util.Random;
 
 import jp.co.yukkuraft.YuItems;
+import jp.co.yukkuraft.base.block.YuBlockContainer;
 import jp.co.yukkuraft.constant.YuAABB;
-import jp.co.yukkuraft.test.YuMultiBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -26,7 +26,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @author Insanophilia
  *
  */
-public class BlockYukkuriEngine extends YuMultiBlock
+public class BlockYukkuriEngine extends YuBlockContainer
 {
     public BlockYukkuriEngine(String name, Material material, SoundType soundType)
     {

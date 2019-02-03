@@ -1,6 +1,6 @@
 package jp.co.yukkuraft.complex.roller;
 
-import jp.co.yukkuraft.test.YuMultiBlock;
+import jp.co.yukkuraft.base.block.YuBlockContainer;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockRoller extends YuMultiBlock
+public class BlockRoller extends YuBlockContainer
 {
     /** 向き */
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);

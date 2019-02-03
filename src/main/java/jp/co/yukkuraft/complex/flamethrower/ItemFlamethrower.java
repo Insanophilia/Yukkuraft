@@ -2,7 +2,7 @@ package jp.co.yukkuraft.complex.flamethrower;
 
 import java.util.Random;
 
-import jp.co.yukkuraft.item.base.YuItemBow;
+import jp.co.yukkuraft.base.item.YuItemBow;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
