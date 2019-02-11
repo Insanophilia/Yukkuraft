@@ -4,10 +4,13 @@ import jp.co.yukkuraft.complex.flamethrower.EntityFlame;
 import jp.co.yukkuraft.complex.flamethrower.RenderFlame;
 import jp.co.yukkuraft.complex.yukkuri.ModelYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.ModelYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.ModelYukkuriRemilia;
 import jp.co.yukkuraft.complex.yukkuri.entity.EntityYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.entity.EntityYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.entity.EntityYukkuriRemilia;
 import jp.co.yukkuraft.complex.yukkuri.entity.RenderYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.entity.RenderYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.entity.RenderYukkuriRemilia;
 import jp.co.yukkuraft.constant.YuColor;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -45,16 +48,22 @@ public class YuEntities
                 YuColor.MARISA_WHITE);
         registerEntitie("yukkuri_reimu", EntityYukkuriReimu.class, 50, 1, true, YuColor.REIMU_RED,
                 YuColor.REIMU_WHITE);
+        registerEntitie("yukkuri_remilia", EntityYukkuriRemilia.class, 50, 1, true, YuColor.REMILIA_CRIMSON,
+                YuColor.REMILIA_SCARLET);
+
         // ゆっくりの自然スポーン登録
         EntityRegistry.addSpawn(EntityYukkuriMarisa.class, 20, 5, 10, EnumCreatureType.CREATURE, YUKKURI_PLACE);
         EntityRegistry.addSpawn(EntityYukkuriReimu.class, 20, 5, 10, EnumCreatureType.CREATURE, YUKKURI_PLACE);
+        EntityRegistry.addSpawn(EntityYukkuriRemilia.class, 20, 5, 10, EnumCreatureType.CREATURE, YUKKURI_PLACE);
 
         //
         registerEntitie("flame", EntityFlame.class, 50, 1, true);
     }
 
+    // Entity ID
     private static int entityId = 1;
 
+    // Entity 登録(スポーンエッグ指定)
     private static void registerEntitie(String name, Class<? extends Entity> clazz, int trackingRange,
             int updateFrequency, boolean sendsVelocityUpdates, int eggPrimary, int eggSecondary)
     {
@@ -63,6 +72,7 @@ public class YuEntities
                 eggPrimary, eggSecondary);
     }
 
+    // Entity 登録(スポーンエッグ指定なし)
     private static void registerEntitie(String name, Class<? extends Entity> clazz, int trackingRange,
             int updateFrequency, boolean sendsVelocityUpdates)
     {
@@ -72,6 +82,18 @@ public class YuEntities
 
     public static void registerEntityRenderers()
     {
+        // ゆっくり魔理沙
+        RenderingRegistry.registerEntityRenderingHandler(EntityYukkuriMarisa.class,
+                new IRenderFactory<EntityYukkuriMarisa>()
+                {
+                    @Override
+                    public Render<? super EntityYukkuriMarisa> createRenderFor(RenderManager manager)
+                    {
+                        return new RenderYukkuriMarisa(manager, new ModelYukkuriMarisa(), 0.3f);
+                    }
+                });
+
+        // ゆっくり霊夢
         RenderingRegistry.registerEntityRenderingHandler(EntityYukkuriReimu.class,
                 new IRenderFactory<EntityYukkuriReimu>()
                 {
@@ -82,15 +104,18 @@ public class YuEntities
                     }
                 });
 
-        RenderingRegistry.registerEntityRenderingHandler(EntityYukkuriMarisa.class,
-                new IRenderFactory<EntityYukkuriMarisa>()
+        // ゆっくりレミリア
+        RenderingRegistry.registerEntityRenderingHandler(EntityYukkuriRemilia.class,
+                new IRenderFactory<EntityYukkuriRemilia>()
                 {
                     @Override
-                    public Render<? super EntityYukkuriMarisa> createRenderFor(RenderManager manager)
+                    public Render<? super EntityYukkuriRemilia> createRenderFor(RenderManager manager)
                     {
-                        return new RenderYukkuriMarisa(manager, new ModelYukkuriMarisa(), 0.3f);
+                        return new RenderYukkuriRemilia(manager, new ModelYukkuriRemilia(), 0.3f);
                     }
                 });
+
+        // 火炎
         RenderingRegistry.registerEntityRenderingHandler(EntityFlame.class,
                 new IRenderFactory<EntityFlame>()
                 {

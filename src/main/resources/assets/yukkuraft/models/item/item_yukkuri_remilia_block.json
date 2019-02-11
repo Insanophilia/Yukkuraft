@@ -1,0 +1,6 @@
+{
+    "parent" : "item/generated",
+    "textures" : {
+        "layer0" : "yukkuraft:items/item_yukkuri_remilia_block"
+    }
+}

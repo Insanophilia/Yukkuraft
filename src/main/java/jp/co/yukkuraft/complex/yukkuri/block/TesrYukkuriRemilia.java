@@ -1,35 +1,35 @@
 package jp.co.yukkuraft.complex.yukkuri.block;
 
-import jp.co.yukkuraft.complex.yukkuri.ModelYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.ModelYukkuriRemilia;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.ResourceLocation;
 
 /**
- * このクラスは「ゆっくり霊夢ブロック」のレンダラーを定義します。
+ * このクラスは「ゆっくりレミリアブロック」のレンダラーを定義します。
  *
  * @author Insanophilia
  *
  */
-public class TesrYukkuriReimu extends TileEntitySpecialRenderer<TileYukkuriReimu>
+public class TesrYukkuriRemilia extends TileEntitySpecialRenderer<TileYukkuriRemilia>
 {
     // テクスチャ
     private static final ResourceLocation[] TEXTURES = {
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_normal.png"),
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_smile.png"),
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_cry.png"),
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_angry.png"),
-            new ResourceLocation("yukkuraft:textures/entities/yukkuri_reimu_sleep.png")
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_remilia_normal.png"),
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_remilia_smile.png"),
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_remilia_cry.png"),
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_remilia_angry.png"),
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_remilia_sleep.png")
     };
     // モデル
-    public ModelYukkuriReimu modelYukkuriReimu = new ModelYukkuriReimu();
+    public ModelYukkuriRemilia modelYukkuri = new ModelYukkuriRemilia();
 
     // 描画処理
     @Override
-    public void render(TileYukkuriReimu tileEntity, double relativeX, double relativeY, double relativeZ,
+    public void render(TileYukkuriRemilia tileEntity, double relativeX, double relativeY, double relativeZ,
             float partialTicks, int blockDamageProgress, float alpha)
     {
-        if (!(tileEntity instanceof TileYukkuriReimu))
+        if (!(tileEntity instanceof TileYukkuriRemilia))
         {
             return;
         }
@@ -59,10 +59,13 @@ public class TesrYukkuriReimu extends TileEntitySpecialRenderer<TileYukkuriReimu
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 GlStateManager.translate(0.0F, -24.0F * f5, 0.0F);
             }
-            modelYukkuriReimu.head.render(f5);
-            modelYukkuriReimu.hair.render(f5);
-            modelYukkuriReimu.face.render(f5);
-            modelYukkuriReimu.option.render(f5);
+            modelYukkuri.head.render(f5);
+            modelYukkuri.hair.render(f5);
+            modelYukkuri.face.render(f5);
+            modelYukkuri.hat1.render(f5);
+            modelYukkuri.hat2.render(f5);
+            modelYukkuri.hat3.render(f5);
+            modelYukkuri.wing.render(f5);
 
         } finally
         {
@@ -72,7 +75,7 @@ public class TesrYukkuriReimu extends TileEntitySpecialRenderer<TileYukkuriReimu
 
     // バウンディングボックスによる描画の制限が無い場合 true
     @Override
-    public boolean isGlobalRenderer(TileYukkuriReimu tileEntityYukkuriReimu)
+    public boolean isGlobalRenderer(TileYukkuriRemilia tileYukkuriRemilia)
     {
         return false;
     }

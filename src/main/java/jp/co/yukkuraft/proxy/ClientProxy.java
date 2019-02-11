@@ -7,8 +7,10 @@ import jp.co.yukkuraft.complex.engine.TesrYukkuriEngine;
 import jp.co.yukkuraft.complex.engine.TileYukkuriEngine;
 import jp.co.yukkuraft.complex.yukkuri.block.TesrYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.block.TesrYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.block.TesrYukkuriRemilia;
 import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriRemilia;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 /**
@@ -27,7 +29,7 @@ public class ClientProxy extends CommonProxy
         YuItems.registerModels();
         // Block Model 登録
         YuBlocks.registerModels();
-        // Entity　Renderer 登録
+        // Entity Renderer 登録
         YuEntities.registerEntityRenderers();
     }
 
@@ -38,6 +40,7 @@ public class ClientProxy extends CommonProxy
         // TileEntity Renderer 登録
         ClientRegistry.bindTileEntitySpecialRenderer(TileYukkuriMarisa.class, new TesrYukkuriMarisa());
         ClientRegistry.bindTileEntitySpecialRenderer(TileYukkuriReimu.class, new TesrYukkuriReimu());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileYukkuriRemilia.class, new TesrYukkuriRemilia());
         ClientRegistry.bindTileEntitySpecialRenderer(TileYukkuriEngine.class, new TesrYukkuriEngine());
     }
 

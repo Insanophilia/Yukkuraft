@@ -7,6 +7,7 @@ import jp.co.yukkuraft.YuItems;
 import jp.co.yukkuraft.complex.engine.TileYukkuriEngine;
 import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.block.TileYukkuriRemilia;
 import jp.co.yukkuraft.constant.YuLootTableList;
 import jp.co.yukkuraft.test.TileHollowMultiBlock;
 import jp.co.yukkuraft.test.TileStoneMultiblock;
@@ -33,6 +34,8 @@ public abstract class CommonProxy
         // TileEntity 登録
         GameRegistry.registerTileEntity(TileYukkuriMarisa.class, "tile_yukkuri_marisa");
         GameRegistry.registerTileEntity(TileYukkuriReimu.class, "tile_yukkuri_reimu");
+        GameRegistry.registerTileEntity(TileYukkuriRemilia.class, "tile_yukkuri_remilia");
+
         GameRegistry.registerTileEntity(TileYukkuriEngine.class, "tile_yukkuri_engine");
         GameRegistry.registerTileEntity(TileStoneMultiblock.class, "tile_stone_multi_block");
         GameRegistry.registerTileEntity(TileHollowMultiBlock.class, "tile_hollow_multi_block");
@@ -40,9 +43,9 @@ public abstract class CommonProxy
 
     public void init()
     {
-        //　Item 精錬レシピ登録
+        // Item 精錬レシピ登録
         YuItems.registerSmeltings();
-        //　Block 精錬レシピ登録
+        // Block 精錬レシピ登録
         YuBlocks.registerSmeltings();
         // LootTableList 登録
         YuLootTableList.registerLootTableList();

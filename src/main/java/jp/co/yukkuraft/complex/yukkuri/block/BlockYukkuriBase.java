@@ -102,7 +102,7 @@ public abstract class BlockYukkuriBase extends YuBlock
             {
                 int face = tileEntityBlockYukkuriBase.getFace();
                 face++;
-                face = face % 4; // TODO 表情は暫定4種
+                face = face % 5; // TODO 表情は暫定5種
                 tileEntityBlockYukkuriBase.setFace(face);
             }
             if (itemstack.getItem() == YuItems.MATTER_ANKO)

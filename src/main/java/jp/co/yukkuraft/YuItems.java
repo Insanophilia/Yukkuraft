@@ -7,6 +7,7 @@ import jp.co.yukkuraft.complex.engine.ItemYukkuriEngine;
 import jp.co.yukkuraft.complex.flamethrower.ItemFlamethrower;
 import jp.co.yukkuraft.complex.yukkuri.block.ItemYukkuriMarisaBlock;
 import jp.co.yukkuraft.complex.yukkuri.block.ItemYukkuriReimuBlock;
+import jp.co.yukkuraft.complex.yukkuri.block.ItemYukkuriRemiliaBlock;
 import jp.co.yukkuraft.constant.YuArmorMaterials;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -38,6 +39,7 @@ public class YuItems
     // Custom Item
     public static final Item ITEM_YUKKURI_MARISA_BLOCK;
     public static final Item ITEM_YUKKURI_REIMU_BLOCK;
+    public static final Item ITEM_YUKKURI_REMILIA_BLOCK;
     public static final Item ITEM_YUKKURI_ENGINE;
     public static final Item ITEM_FLAMETHROWER;
 
@@ -68,6 +70,8 @@ public class YuItems
         // Custom Item
         ITEM_YUKKURI_MARISA_BLOCK = new ItemYukkuriMarisaBlock("item_yukkuri_marisa_block").setTooltipVisible();
         ITEM_YUKKURI_REIMU_BLOCK = new ItemYukkuriReimuBlock("item_yukkuri_reimu_block").setTooltipVisible();
+        ITEM_YUKKURI_REMILIA_BLOCK = new ItemYukkuriRemiliaBlock("item_yukkuri_remilia_block").setTooltipVisible();
+
         ITEM_YUKKURI_ENGINE = new ItemYukkuriEngine("item_yukkuri_engine");
         ITEM_FLAMETHROWER = new ItemFlamethrower("flamethrower")
                 .setMaxStackSize(1).setMaxDamage(256);
@@ -103,6 +107,7 @@ public class YuItems
         // Custom Item
         registerItem(ITEM_YUKKURI_MARISA_BLOCK);
         registerItem(ITEM_YUKKURI_REIMU_BLOCK);
+        registerItem(ITEM_YUKKURI_REMILIA_BLOCK);
         registerItem(ITEM_YUKKURI_ENGINE);
         registerItem(ITEM_FLAMETHROWER);
 
@@ -144,6 +149,7 @@ public class YuItems
         // Custom Item
         registerModel(ITEM_YUKKURI_MARISA_BLOCK);
         registerModel(ITEM_YUKKURI_REIMU_BLOCK);
+        registerModel(ITEM_YUKKURI_REMILIA_BLOCK);
         registerModel(ITEM_YUKKURI_ENGINE);
         registerModel(ITEM_FLAMETHROWER);
 

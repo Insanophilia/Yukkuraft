@@ -16,9 +16,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class ModelYukkuriMarisa extends ModelBase
 {
-    public ModelRenderer head;
-    public ModelRenderer hair;
     public ModelRenderer face;
+    public ModelRenderer hair;
+    public ModelRenderer head;
     public ModelRenderer hat1;
     public ModelRenderer hat2;
     public ModelRenderer hat3;
@@ -26,37 +26,31 @@ public class ModelYukkuriMarisa extends ModelBase
 
     public ModelYukkuriMarisa()
     {
-        this.textureWidth = 128;
+        this.textureWidth = 256;
         this.textureHeight = 256;
-
-        this.head = new ModelRenderer(this, 0, 67);
-        this.head.setRotationPoint(-8.0F, 9.0F, -8.0F);
-        this.head.addBox(0.0F, 0.0F, 0.0F, 16, 15, 16, 0.0F);
-
-        this.hair = new ModelRenderer(this, 0, 32);
-        this.hair.setRotationPoint(-10.0F, 10.0F, -10.0F);
-        this.hair.addBox(0.0F, 0.0F, 0.0F, 20, 13, 20, 0.0F);
 
         this.face = new ModelRenderer(this, 0, 0);
         this.face.setRotationPoint(-9.0F, 11.0F, -9.0F);
         this.face.addBox(0.0F, 0.0F, 0.0F, 18, 12, 18, 0.0F);
-
-        this.hat1 = new ModelRenderer(this, 0, 101);
+        this.hair = new ModelRenderer(this, 0, 31);
+        this.hair.setRotationPoint(-10.0F, 10.0F, -10.0F);
+        this.hair.addBox(0.0F, 0.0F, 0.0F, 20, 13, 20, 0.0F);
+        this.head = new ModelRenderer(this, 0, 65);
+        this.head.setRotationPoint(-8.0F, 9.0F, -8.0F);
+        this.head.addBox(0.0F, 0.0F, 0.0F, 16, 15, 16, 0.0F);
+        this.hat1 = new ModelRenderer(this, 0, 97);
         this.hat1.setRotationPoint(-14.0F, 6.0F, -14.0F);
         this.hat1.addBox(0.0F, 0.0F, 1.0F, 28, 4, 28, 0.0F);
         this.setRotateAngle(hat1, -0.17453292519943295F, 0.0F, 0.0F);
-
-        this.hat2 = new ModelRenderer(this, 0, 135);
+        this.hat2 = new ModelRenderer(this, 0, 130);
         this.hat2.setRotationPoint(-11.0F, 1.0F, -11.0F);
         this.hat2.addBox(0.0F, 0.6F, 2.0F, 22, 6, 22, 0.0F);
         this.setRotateAngle(hat2, -0.17453292519943295F, 0.0F, 0.0F);
-
-        this.hat3 = new ModelRenderer(this, 0, 165);
+        this.hat3 = new ModelRenderer(this, 0, 159);
         this.hat3.setRotationPoint(-9.0F, -2.0F, -9.0F);
         this.hat3.addBox(0.0F, 0.0F, 2.5F, 18, 5, 18, 0.0F);
         this.setRotateAngle(hat3, -0.17453292519943295F, 0.0F, 0.0F);
-
-        this.hat4 = new ModelRenderer(this, 0, 190);
+        this.hat4 = new ModelRenderer(this, 0, 183);
         this.hat4.setRotationPoint(-5.0F, -4.0F, 0.0F);
         this.hat4.addBox(0.0F, 0.0F, -3.0F, 10, 4, 20, 0.0F);
         this.setRotateAngle(hat4, -0.17453292519943295F, 0.0F, 0.0F);

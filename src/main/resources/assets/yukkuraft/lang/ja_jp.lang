@@ -14,8 +14,10 @@ item.matter_anko.name=万能餡子
 item.shiratama.name=白玉団子
 item.yukkuri_marisa.name=ゆっくり魔理沙
 item.yukkuri_reimu.name=ゆっくり霊夢
+item.yukkuri_remilia.name=ゆっくりレミリア
 item.okazari_marisa.name=ゆっくり魔理沙のお飾り
 item.okazari_reimu.name=ゆっくり霊夢のお飾り
+item.okazari_remilia.name=ゆっくりレミリアのお飾り
 item.strange_meat.name=奇妙な肉
 item.ground_meat.name=挽き肉
 item.hamburg_steak.name=ハンバーグ
@@ -28,6 +30,7 @@ item.test_greaves.name=試作型グリーブス
 
 item.item_yukkuri_marisa_block.name=ゆっくり魔理沙ブロック
 item.item_yukkuri_reimu_block.name=ゆっくり霊夢ブロック
+item.item_yukkuri_remilia_block.name=ゆっくりレミリアブロック
 
 item.ring_of_moonlight.name=月明かりの腕輪
 item.flamethrower.name=火炎放射器
@@ -57,6 +60,7 @@ tooltip.tile.yukari_block=ゆかりブロック by Yukkuraft
 ## ENTITY_NAME
 entity.yukkuri_marisa.name=ゆっくり魔理沙
 entity.yukkuri_reimu.name=ゆっくり霊夢
+entity.yukkuri_remilia.name=ゆっくりレミリア
 ########################################
 ## ETC_TEXT
 death.attack.yukkuraft.damage_source.mincer=%sはネギトロめいた死に様を晒した。

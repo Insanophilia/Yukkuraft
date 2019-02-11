@@ -5,6 +5,7 @@ import jp.co.yukkuraft.complex.engine.BlockYukkuriEngine;
 import jp.co.yukkuraft.complex.roller.BlockRoller;
 import jp.co.yukkuraft.complex.yukkuri.block.BlockYukkuriMarisa;
 import jp.co.yukkuraft.complex.yukkuri.block.BlockYukkuriReimu;
+import jp.co.yukkuraft.complex.yukkuri.block.BlockYukkuriRemilia;
 import jp.co.yukkuraft.simple.block.BlockBeltConveyor;
 import jp.co.yukkuraft.simple.block.BlockFactoryGlass;
 import jp.co.yukkuraft.simple.block.BlockHouraku;
@@ -54,6 +55,7 @@ public class YuBlocks
     // TileEntity Block
     public static final Block YUKKURI_MARISA_BLOCK;
     public static final Block YUKKURI_REIMU_BLOCK;
+    public static final Block YUKKURI_REMILIA_BLOCK;
     public static final Block YUKKURI_ENGINE;
     public static final Block ROLLER;
 
@@ -83,6 +85,7 @@ public class YuBlocks
         // TileEntity Block
         YUKKURI_MARISA_BLOCK = new BlockYukkuriMarisa("yukkuri_marisa_block", Material.CLAY, SoundType.SLIME);
         YUKKURI_REIMU_BLOCK = new BlockYukkuriReimu("yukkuri_reimu_block", Material.CLAY, SoundType.SLIME);
+        YUKKURI_REMILIA_BLOCK = new BlockYukkuriRemilia("yukkuri_remilia_block", Material.CLAY, SoundType.SLIME);
         YUKKURI_ENGINE = new BlockYukkuriEngine("yukkuri_engine", Material.IRON, SoundType.METAL)
                 .setHardness(5.0F).setResistance(10.0F);
         ROLLER = new BlockRoller("roller", Material.IRON, SoundType.METAL)
@@ -114,6 +117,7 @@ public class YuBlocks
         // TileEntity Block
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_MARISA_BLOCK);
         YuBlocks.registerBlockWithOutItemBlock(YUKKURI_REIMU_BLOCK);
+        YuBlocks.registerBlockWithOutItemBlock(YUKKURI_REMILIA_BLOCK);
         YuBlocks.registerBlock(YUKKURI_ENGINE);
         YuBlocks.registerBlock(ROLLER);
         // Test Block

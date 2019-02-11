@@ -15,6 +15,7 @@ public class TesrYukkuriMarisa extends TileEntitySpecialRenderer<TileYukkuriMari
 {
     // テクスチャ
     private static final ResourceLocation[] TEXTURES = {
+            new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_normal.png"),
             new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_smile.png"),
             new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_cry.png"),
             new ResourceLocation("yukkuraft:textures/entities/yukkuri_marisa_angry.png"),

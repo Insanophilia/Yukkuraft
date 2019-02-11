@@ -16,31 +16,28 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class ModelYukkuriReimu extends ModelBase
 {
-    public ModelRenderer head;
+    public ModelRenderer option;
     public ModelRenderer hair;
     public ModelRenderer face;
-    public ModelRenderer option;
+    public ModelRenderer head;
 
     public ModelYukkuriReimu()
     {
-        this.textureWidth = 128;
-        this.textureHeight = 128;
+        this.textureWidth = 256;
+        this.textureHeight = 256;
 
-        this.head = new ModelRenderer(this, 0, 89);
-        this.head.setRotationPoint(-8.0F, 9.0F, -8.0F);
-        this.head.addBox(0.0F, 0.0F, 0.0F, 16, 15, 16, 0.0F);
-
-        this.hair = new ModelRenderer(this, 0, 22);
+        this.hair = new ModelRenderer(this, 0, 31);
         this.hair.setRotationPoint(-10.0F, 10.0F, -10.0F);
         this.hair.addBox(0.0F, 0.0F, 0.0F, 20, 13, 20, 0.0F);
-
-        this.face = new ModelRenderer(this, 0, 57);
-        this.face.setRotationPoint(-9.0F, 11.0F, -9.0F);
-        this.face.addBox(0.0F, 0.0F, 0.0F, 18, 12, 18, 0.0F);
-
-        this.option = new ModelRenderer(this, 0, 0);
+        this.option = new ModelRenderer(this, 0, 97);
         this.option.setRotationPoint(-12.0F, 3.0F, 11.0F);
         this.option.addBox(0.0F, 0.0F, 0.0F, 24, 20, 0, 0.0F);
+        this.head = new ModelRenderer(this, 0, 65);
+        this.head.setRotationPoint(-8.0F, 9.0F, -8.0F);
+        this.head.addBox(0.0F, 0.0F, 0.0F, 16, 15, 16, 0.0F);
+        this.face = new ModelRenderer(this, 0, 0);
+        this.face.setRotationPoint(-9.0F, 11.0F, -9.0F);
+        this.face.addBox(0.0F, 0.0F, 0.0F, 18, 12, 18, 0.0F);
     }
 
     @Override
